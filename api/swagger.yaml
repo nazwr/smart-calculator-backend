@@ -1,9 +1,15 @@
 ---
 swagger: "2.0"
 info:
+<<<<<<< HEAD
   description: A simple calculator for internal consumption
   version: 2.0.0
   title: Smartbear Calculator
+=======
+  description: "A simple calculator for internal consumption"
+  version: "2.0.0"
+  title: "Smartbear Calculator"
+>>>>>>> 20f3dce2e3708a3a5b414f1839cc21c0a730665b
   contact:
     email: math.whizz@smartbear.com
   license:
@@ -34,11 +40,20 @@ paths:
         200:
           description: Successful operation.
           schema:
+<<<<<<< HEAD
             $ref: '#/definitions/standardResponse'
+=======
+            $ref: "#/definitions/standardResponse"
+>>>>>>> 20f3dce2e3708a3a5b414f1839cc21c0a730665b
         404:
           description: Bad input.
           schema:
+<<<<<<< HEAD
             $ref: '#/definitions/standardError'
+=======
+            $ref: "#/definitions/standardError"
+      x-swagger-router-controller: "Default"
+>>>>>>> 20f3dce2e3708a3a5b414f1839cc21c0a730665b
   /subtract:
     post:
       summary: Subtract inputOne from inputTwo
@@ -60,34 +75,126 @@ paths:
         200:
           description: Successful operation.
           schema:
+<<<<<<< HEAD
             $ref: '#/definitions/resultSubtract'
+=======
+            $ref: "#/definitions/standardResponse_2"
+>>>>>>> 20f3dce2e3708a3a5b414f1839cc21c0a730665b
         404:
           description: Bad input.
           schema:
+<<<<<<< HEAD
             $ref: '#/definitions/error'
 definitions:
   resultAdd:
     type: object
+=======
+            $ref: "#/definitions/standardError_2"
+      x-swagger-router-controller: "Default"
+  /multiply:
+    post:
+      summary: "Multiply inputOne and inputTwo"
+      operationId: "multiplyInput"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "inputOne"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      - name: "inputTwo"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful operation."
+          schema:
+            $ref: "#/definitions/standardResponse_2"
+        404:
+          description: "Bad input."
+          schema:
+            $ref: "#/definitions/standardError_2"
+      x-swagger-router-controller: "Default"
+  /divide:
+    post:
+      summary: "Divdie inputOne into inputTwo"
+      operationId: "divideInput"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "inputOne"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      - name: "inputTwo"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful operation."
+          schema:
+            $ref: "#/definitions/standardResponse_2"
+        404:
+          description: "Bad input."
+          schema:
+            $ref: "#/definitions/standardError_2"
+      x-swagger-router-controller: "Default"
+definitions:
+  standardResponse:
+    type: "object"
+>>>>>>> 20f3dce2e3708a3a5b414f1839cc21c0a730665b
     required:
     - result
     properties:
       result:
+<<<<<<< HEAD
         type: integer
         format: int64
         x-disabled-for-amazon-gateway:
           example: 4
   resultSubtract:
     type: object
+=======
+        type: "string"
+        example: "1234567890"
+    example:
+      result: "1234567890"
+  standardError:
+    type: "object"
+    required:
+    - "message"
+    properties:
+      message:
+        type: "string"
+        example: "Error in request"
+  standardResponse_2:
+    type: "object"
+>>>>>>> 20f3dce2e3708a3a5b414f1839cc21c0a730665b
     required:
     - result
     properties:
       result:
+<<<<<<< HEAD
         type: integer
         format: int64
         x-disabled-for-amazon-gateway:
           example: 0
   error:
     type: object
+=======
+        type: "string"
+        example: "1234567890"
+    example:
+      result: "1234567890"
+  standardError_2:
+    type: "object"
+>>>>>>> 20f3dce2e3708a3a5b414f1839cc21c0a730665b
     required:
     - message
     properties:

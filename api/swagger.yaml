@@ -1,100 +1,114 @@
 ---
 swagger: "2.0"
 info:
-  description: "A simple calculator for internal consumption"
-  version: "1.0.0"
-  title: "Smartbear Calculator"
+  description: A simple calculator for internal consumption
+  version: 2.0.0
+  title: Smartbear Calculator
   contact:
-    email: "math.whizz@smartbear.com"
+    email: math.whizz@smartbear.com
   license:
-    name: "Apache 2.0"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
 schemes:
-- "http"
-- "https"
+- http
+- https
 paths:
   /add:
     post:
-      summary: "add two numbers together"
-      operationId: "addInput"
+      summary: add two numbers together
+      operationId: addInput
       produces:
-      - "application/json"
+      - application/json
       parameters:
-      - name: "inputOne"
-        in: "query"
-        description: "First input to resolve"
+      - name: inputOne
+        in: query
+        description: First input to resolve
         required: true
-        type: "string"
-      - name: "inputTwo"
-        in: "query"
-        description: "First input to resolve"
+        type: string
+      - name: inputTwo
+        in: query
+        description: First input to resolve
         required: true
-        type: "string"
+        type: string
       responses:
         200:
-          description: "Successful operation."
+          description: Successful operation.
           schema:
-            $ref: "#/definitions/resultAdd"
+            $ref: '#/definitions/standardResponse'
         404:
-          description: "Bad input."
+          description: Bad input.
           schema:
-            $ref: "#/definitions/error"
-      x-swagger-router-controller: "Default"
+            $ref: '#/definitions/standardError'
   /subtract:
     post:
-      summary: "Subtract inputOne from inputTwo"
-      operationId: "subtractInput"
+      summary: Subtract inputOne from inputTwo
+      operationId: subtractInput
       produces:
-      - "application/json"
+      - application/json
       parameters:
-      - name: "inputOne"
-        in: "query"
-        description: "First input to resolve"
+      - name: inputOne
+        in: query
+        description: First input to resolve
         required: true
-        type: "string"
-      - name: "inputTwo"
-        in: "query"
-        description: "First input to resolve"
+        type: string
+      - name: inputTwo
+        in: query
+        description: First input to resolve
         required: true
-        type: "string"
+        type: string
       responses:
         200:
-          description: "Successful operation."
+          description: Successful operation.
           schema:
-            $ref: "#/definitions/resultSubtract"
+            $ref: '#/definitions/resultSubtract'
         404:
-          description: "Bad input."
+          description: Bad input.
           schema:
-            $ref: "#/definitions/error"
-      x-swagger-router-controller: "Default"
+            $ref: '#/definitions/error'
 definitions:
   resultAdd:
-    type: "object"
+    type: object
     required:
-    - "result"
+    - result
     properties:
       result:
-        type: "integer"
-        format: "int64"
-        example: 4
-    example:
-      result: 4
+        type: integer
+        format: int64
+        x-disabled-for-amazon-gateway:
+          example: 4
   resultSubtract:
-    type: "object"
+    type: object
     required:
-    - "result"
+    - result
     properties:
       result:
-        type: "integer"
-        format: "int64"
-        example: 0
-    example:
-      result: 0
+        type: integer
+        format: int64
+        x-disabled-for-amazon-gateway:
+          example: 0
   error:
-    type: "object"
+    type: object
     required:
-    - "message"
+    - message
     properties:
       message:
-        type: "string"
-        example: "Error in request"
+        type: string
+        x-disabled-for-amazon-gateway:
+          example: Error in request
+  standardResponse:
+    type: object
+    required:
+    - result
+    properties:
+      result:
+        type: string
+        example: "1234567890"
+  standardError:
+    type: object
+    required:
+    - message
+    properties:
+      message:
+        type: string
+        example: Error in request
+x-aws-api-id: 0yujjrhfpi

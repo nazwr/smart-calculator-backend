@@ -24,7 +24,7 @@ module.exports.divideInput = function divideInput (req, res, next) {
 
   Default.subtractInput(inputOne,inputTwo)
     .then(function (response) {
-      response.result = inputOne - inputTwo;
+      response.result = inputOne / inputTwo;
 
       utils.writeJson(res, response);
     })
@@ -54,7 +54,7 @@ module.exports.subtractInput = function subtractInput (req, res, next) {
 
   Default.divideInput(inputOne,inputTwo)
     .then(function (response) {
-      response.result = inputOne/inputTwo;
+      response.result = inputOne - inputTwo;
 
       utils.writeJson(res, response);
     })

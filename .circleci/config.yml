@@ -21,9 +21,9 @@ jobs:
       - checkout
       - run: echo "Installing secondary dependencies"
       - run: apk add ca-certificates
+      - run: cat "my_workspace/echo-output"
       - attach_workspace:
           at: my_workspace
-
       - run: |
           if [[ $(cat my_workspace/echo-output) == "Dependencies installed successfully." ]]; then
             echo "It worked!";

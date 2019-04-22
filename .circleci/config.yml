@@ -5,18 +5,33 @@ jobs:
       - image: node:8-alpine
     steps:
       - checkout
+      - run: echo "Checked out, ready to install dependencies."
       - run: npm install
-      - run: sleep 25
+      - run: mkdir -p my_workspace
+      - run: echo "Dependencies installed successfully." > my_workspace/echo-output
+      - persist_to_workspace:
+          root: my_workspace
+          paths:
+            - echo-output
   two:
     docker:
       - image: node:8-alpine
     steps:
       - checkout
-      - run: npm install
-      - run: sleep 15
+      - run: echo "Installing secondary dependencies"
+      - attach_workspace:
+          at: my_workspace
+      - run: |
+          if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
+            echo "It worked!";
+          else
+            echo "Nope!"; exit 1
+          fi
 workflows:
   version: 2
   one_and_two:
     jobs:
       - one
-      - two
+      - two:
+        requires:
+          - one

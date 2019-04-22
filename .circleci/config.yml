@@ -25,7 +25,8 @@ jobs:
           at: my_workspace
       - run: cat "my_workspace/echo-output"
       - run: |
-          if [[ $(cat my_workspace/echo-output) == "Dependencies installed successfully." ]]; then
+          if [ $(cat my_workspace/echo-output) == "Dependencies installed successfully." ]
+          then
             echo "It worked!";
           else
             echo "Nope!"; exit 1

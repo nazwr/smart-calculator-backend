@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node/8-alpine
+      - image: node:8-alpine
     steps:
       - checkout
       - run: echo "A first allo mate, alright?"

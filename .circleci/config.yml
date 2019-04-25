@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  one:
+  build:
     docker:
       - image: node:8-alpine
     steps:
@@ -14,16 +14,9 @@ jobs:
           root: my_workspace
           paths:
             - echo-output
-  two:
+  test:
     docker:
-      - image: node:8-alpine
-    steps:
-      - checkout
-      - run: echo "Installing secondary dependencies"
-      - run: apk add ca-certificates
-      - attach_workspace:
-          at: my_workspace
-      - run: cat "my_workspace/echo-output"
+      - image: nate01776/sui:smart-calc-project
 workflows:
   version: 2
   one_and_two:

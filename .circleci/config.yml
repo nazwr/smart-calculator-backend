@@ -17,6 +17,8 @@ jobs:
   test:
     docker:
       - image: nate01776/sui:smart-calc-project
+    steps:
+      - checkout
 workflows:
   version: 2
   one_and_two:

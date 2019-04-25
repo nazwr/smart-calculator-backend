@@ -15,10 +15,9 @@ jobs:
           paths:
             - echo-output
   test:
-    machine:
-      - image: circleci/classic:201708-01
+    machine: true
     steps:
-      - run: docker run sui:smart-calc-project
+      - run: docker run nate01776/sui:smart-calc-project
 workflows:
   version: 2
   one_and_two:

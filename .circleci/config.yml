@@ -17,7 +17,7 @@ jobs:
   test:
     machine: true
     steps:
-      - run: docker run nate01776/sui:smart-calc-project
+      - run: docker run nate01776/sui:smart-calc-project "-ehttp://54.189.182.152" "./readyapi/project/run.xml"
 workflows:
   version: 2
   one_and_two:

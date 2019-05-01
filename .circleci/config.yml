@@ -17,7 +17,8 @@ jobs:
   test:
     machine: true
     steps:
-      - run: docker run nate01776/sui:latest "-ehttp://54.189.182.152:8050" "./readyapi/project/run.xml"
+      - run: git clone https://github.com/nate01776/lui_scripts.git ~/tests/calc-tests
+      - run: docker run -v="~/tests/calc-tests":/project -v="~/tests/reports":/reports -e LICENSE_SERVER="34.221.214.56:1099" -e COMMAND_LINE="-ehttp://54.189.182.152:8050" -it smartbear/ready-api-soapui-testrunner:latest
 workflows:
   version: 2
   one_and_two:

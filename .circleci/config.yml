@@ -18,7 +18,6 @@ jobs:
     machine: true
     steps:
       - run: git clone https://github.com/nate01776/smart-calculator-backend.git /home/circleci/tests/to_run
-      - run: mkdir /home/circleci/tests/reports/junit
       - run: docker run -v="/home/circleci/tests/to_run/tests":/project -v="/home/circleci/tests/reports/junit":/reports -e LICENSE_SERVER="54.184.95.50:1099" -e COMMAND_LINE="-ehttp://54.185.226.137:8050 '-f/reports' '-RJUnit-style HTML Report' /project/smart-calculator-readyapi-project.xml" -it smartbear/ready-api-soapui-testrunner:latest
       - store_artifacts:
           path: /home/circleci/tests/reports

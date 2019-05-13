@@ -18,9 +18,9 @@ jobs:
     machine: true
     steps:
       - run: git clone https://github.com/nate01776/smart-calculator-backend.git /home/circleci/tests/to_run
-      - run: ls /home/circleci/tests/to_run/tests
       # - run: docker run nate01776/sui:smart-calc-project "-ehttp://54.189.182.152:8050" "./readyapi/project/run.xml"
-      - run: docker run -v="/home/circleci/tests/to_run/tests":/project -v="/home/circleci/tests/reports":/reports -e LICENSE_SERVER="54.184.95.50:1099" -e COMMAND_LINE="-ehttp://54.185.226.137:8050 /project/smart-calculator-readyapi-project.xml" -it smartbear/ready-api-soapui-testrunner:latest
+      - run: docker run -v="/home/circleci/tests/to_run/tests":/project -v="/home/circleci/tests/reports":/reports -e LICENSE_SERVER="54.184.95.50:1099" -e COMMAND_LINE="-ehttp://54.185.226.137:8050 -j /project/smart-calculator-readyapi-project.xml" -it smartbear/ready-api-soapui-testrunner:latest
+      - run: ls /home/circleci/tests/reports
 workflows:
   version: 2
   one_and_two:

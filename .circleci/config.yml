@@ -18,8 +18,8 @@ jobs:
     machine: true
     steps:
       - run: git clone https://github.com/nate01776/lui_scripts.git ~/tests/calctests
-      - run: docker run nate01776/sui:latest "-ehttp://54.189.182.152:8050" "./readyapi/project/run.xml"
-      # - run: docker run -v="/home/circleci/tests/calctests":/project -v="/home/circleci/tests/reports":/reports -e LICENSE_SERVER="54.184.95.50:1099" -e COMMAND_LINE="-ehttp://54.185.226.137:8050" -it smartbear/ready-api-soapui-testrunner:latest
+      # - run: docker run nate01776/sui:smart-calc-project "-ehttp://54.189.182.152:8050" "./readyapi/project/run.xml"
+      - run: docker run -v="/home/circleci/tests/calctests":/project -v="/home/circleci/tests/reports":/reports -e LICENSE_SERVER="54.184.95.50:1099" -e COMMAND_LINE="-ehttp://54.185.226.137:8050" -it smartbear/ready-api-soapui-testrunner:latest
 workflows:
   version: 2
   one_and_two:

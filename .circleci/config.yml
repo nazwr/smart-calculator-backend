@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 orbs:
   aws-ecr: circleci/aws-ecr@0.0.2
   aws-ecs: circleci/aws-ecs@0.0.8
@@ -27,7 +27,6 @@ jobs:
       - store_test_results: 
           path: /home/circleci/tests/reports
 workflows:
-  version: 2
   build-and-deploy:
     jobs:
       - aws-ecr/build_and_push_image:

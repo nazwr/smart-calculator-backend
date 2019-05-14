@@ -27,6 +27,7 @@ jobs:
       - store_test_results: 
           path: /home/circleci/tests/reports
 workflows:
+  version: 2
   build-and-deploy:
     jobs:
       - aws-ecr/build_and_push_image:

@@ -16,7 +16,7 @@ jobs:
             - echo-output
   test:
     docker:
-      - image: node:8-alpine
+      - image: ubuntu
     steps:
       - checkout
       - run: apt-get install httpie

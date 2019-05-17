@@ -26,7 +26,7 @@ jobs:
       # - run: docker run -v="/home/circleci/tests/to_run/tests":/project -v="/home/circleci/tests/reports/junit":/reports -e LICENSE_SERVER="54.184.95.50:1099" -e COMMAND_LINE="-ehttp://54.185.226.137:8050 '-f/reports' '-RJUnit-style HTML Report' /project/smart-calculator-readyapi-project.xml" -it smartbear/ready-api-soapui-testrunner:latest
       - store_artifacts:
           path: ./reports
-      - run: grep FAILED ./reports/output.json
+      - run: grep OK ./reports/output.json
           # - store_test_results: 
       #     path: ./reports/output.txt
 workflows:

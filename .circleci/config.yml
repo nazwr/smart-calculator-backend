@@ -22,7 +22,7 @@ jobs:
       - run: apt-get update
       - run: apt-get -y install curl
       - run: ls ./tests
-      - run: curl -X POST -L --basic --user "admin:testengine" -F "file=./tests/calc_project.zip;type=application/zip" "http://34.220.244.21:8085/api/v1/testjobs/?environment=remote_actual_v2"
+      - run: curl -X POST -L --basic --user "admin:testengine" -F "./tests/calc_project.zip;type=application/zip" "http://34.220.244.21:8085/api/v1/testjobs/?environment=remote_actual_v2"
       # - run: docker run -v="/home/circleci/tests/to_run/tests":/project -v="/home/circleci/tests/reports/junit":/reports -e LICENSE_SERVER="54.184.95.50:1099" -e COMMAND_LINE="-ehttp://54.185.226.137:8050 '-f/reports' '-RJUnit-style HTML Report' /project/smart-calculator-readyapi-project.xml" -it smartbear/ready-api-soapui-testrunner:latest
       - store_artifacts:
           path: /home/circleci/tests/reports

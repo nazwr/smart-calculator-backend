@@ -5,15 +5,15 @@ jobs:
       - image: node:8-alpine
     steps:
       - checkout
-      # - run: echo "Checked out, ready to install dependencies."
-      # - run: npm install
-      # - run: mkdir -p my_workspace
-      # - run: apk add ca-certificates
-      # - run: echo "Dependencies installed successfully." > my_workspace/echo-output
-      # - persist_to_workspace:
-      #     root: my_workspace
-      #     paths:
-      #       - echo-output
+      - run: echo "Checked out, ready to install dependencies."
+      - run: npm install
+      - run: mkdir -p my_workspace
+      - run: apk add ca-certificates
+      - run: echo "Dependencies installed successfully." > my_workspace/echo-output
+      - persist_to_workspace:
+          root: my_workspace
+          paths:
+            - echo-output
   test:
     docker:
       - image: ubuntu

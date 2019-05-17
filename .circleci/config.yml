@@ -5,21 +5,21 @@ jobs:
       - image: node:8-alpine
     steps:
       - checkout
-      - run: echo "Checked out, ready to install dependencies."
-      - run: npm install
-      - run: mkdir -p my_workspace
-      - run: apk add ca-certificates
-      - run: echo "Dependencies installed successfully." > my_workspace/echo-output
-      - persist_to_workspace:
-          root: my_workspace
-          paths:
-            - echo-output
+      # - run: echo "Checked out, ready to install dependencies."
+      # - run: npm install
+      # - run: mkdir -p my_workspace
+      # - run: apk add ca-certificates
+      # - run: echo "Dependencies installed successfully." > my_workspace/echo-output
+      # - persist_to_workspace:
+      #     root: my_workspace
+      #     paths:
+      #       - echo-output
   test:
     docker:
       - image: ubuntu
     steps:
       - checkout
-      # - run: apt-get install httpie
+      - run: apt-get install curl
       - run: curl -X POST -L -H "Basic YWRtaW46dGVzdGVuZ2luZQ==" -F "file=@/tests/to_run/tests/calc_project.zip;type=application/zip" "http://34.220.244.21:8085/api/v1/testjobs/?environment=remote_actual_v2"
       # - run: docker run -v="/home/circleci/tests/to_run/tests":/project -v="/home/circleci/tests/reports/junit":/reports -e LICENSE_SERVER="54.184.95.50:1099" -e COMMAND_LINE="-ehttp://54.185.226.137:8050 '-f/reports' '-RJUnit-style HTML Report' /project/smart-calculator-readyapi-project.xml" -it smartbear/ready-api-soapui-testrunner:latest
       - store_artifacts:

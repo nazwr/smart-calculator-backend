@@ -21,7 +21,7 @@ jobs:
       - checkout
       - run: apt-get update
       - run: apt -y install nodejs
-      - run: sudo apt install build-essential
+      - run: apt -y install build-essential
       # - run: npm install testengine-cli
       - run: node -v
       - run: npm -v

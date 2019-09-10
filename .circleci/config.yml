@@ -29,12 +29,17 @@ jobs:
           path: ./reports/output.xml
   deploy:
     docker:
-      - image: node:
+      - image: node:8-alpine
+    steps:
+      - run: echo "hello!"
 workflows:
   version: 2
-  one_and_two:
+  main_process:
     jobs:
-      - build
+      - build & stage
       - test:
           requires:
-            - build
+            - build & stage
+      - deploy
+          requires:
+            - test

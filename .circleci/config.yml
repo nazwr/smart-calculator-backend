@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  build & stage:
     docker:
       - image: node:8-alpine
     steps:
@@ -19,13 +19,17 @@ jobs:
       - image: node:8-alpine
     steps:
       - checkout
-      - run: npm install -g testengine-cli
+      - run: npm install
+      - run: npm install testengine-cli
       - run: testengine -u circleci -p circlecitest jobs report output=./reports format=junit da4395ff-6238-4f0f-91ef-ab8c52788281
       - store_artifacts:
           path: ./reports
       - run: ls ./reports
       - store_test_results: 
           path: ./reports/output.xml
+  deploy:
+    docker:
+      - image: node:
 workflows:
   version: 2
   one_and_two:

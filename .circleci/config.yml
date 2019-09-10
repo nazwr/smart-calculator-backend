@@ -40,6 +40,6 @@ workflows:
       - test:
           requires:
             - build & stage
-      - deploy
+      - deploy:
           requires:
             - test

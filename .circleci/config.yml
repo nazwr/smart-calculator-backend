@@ -16,7 +16,7 @@ jobs:
             - echo-output
   test:
     docker:
-      - image: ubuntu
+      - image: node:8-alpine
     steps:
       - checkout
       - run: apt-get update

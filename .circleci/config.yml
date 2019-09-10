@@ -20,10 +20,12 @@ jobs:
     steps:
       - checkout
       - run: apt-get update
-      - run: apt-get -y install nodejs
+      - run: apt -y install nodejs
+      - run: sudo apt install build-essential
       # - run: npm install testengine-cli
       - run: node -v
-      - run: testengine -u circleci -p circlecitest jobs report output=./reports format=junit da4395ff-6238-4f0f-91ef-ab8c52788281
+      - run: npm -v
+      # - run: testengine -u circleci -p circlecitest jobs report output=./reports format=junit da4395ff-6238-4f0f-91ef-ab8c52788281
       - store_artifacts:
           path: ./reports
       - run: ls ./reports

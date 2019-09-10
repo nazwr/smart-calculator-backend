@@ -16,11 +16,11 @@ jobs:
             - echo-output
   test:
     docker:
-      - image: node:8-alpine
+      - image: node:8
     steps:
       - checkout
       - run: npm install
-      - run: npm install -g testengine-cli
+      - run: npm install testengine-cli
       - run: testengine -u circleci -p circlecitest jobs report output=./reports format=junit da4395ff-6238-4f0f-91ef-ab8c52788281
       - store_artifacts:
           path: ./reports

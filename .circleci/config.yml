@@ -22,6 +22,7 @@ jobs:
       - run: apt-get update
       - run: apt -y install nodejs
       - run: apt -y install build-essential
+      - run: apt -y install npm
       # - run: npm install testengine-cli
       - run: node -v
       - run: npm -v

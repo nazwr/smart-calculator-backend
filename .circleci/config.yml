@@ -19,7 +19,6 @@ jobs:
       - image: node:8-alpine
     steps:
       - checkout
-      - run: apt-get update
       - run: npm install -g testengine-cli
       - run: testengine -u circleci -p circlecitest jobs report output=./reports format=junit da4395ff-6238-4f0f-91ef-ab8c52788281
       - store_artifacts:

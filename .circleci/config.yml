@@ -30,7 +30,7 @@ jobs:
           path: ./reports
       - run: ls ./reports
       - store_test_results: 
-          path: ./reports/output.xml
+          path: ./reports/output.json
   deploy:
     docker:
       - image: node:8-alpine

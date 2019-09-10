@@ -23,11 +23,9 @@ jobs:
       - run: apt -y install nodejs
       - run: apt -y install build-essential
       - run: apt -y install npm
-      - run: node -v
-      - run: npm -v
       - run: npm install -g testengine-cli
       - run: testengine --version
-      # - run: testengine -u circleci -p circlecitest jobs report output=./reports format=junit da4395ff-6238-4f0f-91ef-ab8c52788281
+      - run: testengine -u circleci -p circlecitest jobs report output=./reports format=junit da4395ff-6238-4f0f-91ef-ab8c52788281
       - store_artifacts:
           path: ./reports
       - run: ls ./reports

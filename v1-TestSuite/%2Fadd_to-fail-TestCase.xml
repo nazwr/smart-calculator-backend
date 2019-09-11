@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="6677521c-e93f-4f9e-ba09-4230ae2d12e5" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="/add_to fail TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [/add] located at [/add]</con:description>
+  <con:settings>
+    <con:setting id="6677521c-e93f-4f9e-ba09-4230ae2d12e5fileName">%2Fadd_to-fail-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="79bd7971-853a-40f7-bab0-06df5dd24ab2">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>2</generatorsTotalNumber>
+          <lastSelectedProperty>1</lastSelectedProperty>
+          <GeneratorType0>INT</GeneratorType0>
+          <PropertyName0>randomInputOne</PropertyName0>
+          <repetitionCountrandomInputOne>0</repetitionCountrandomInputOne>
+          <repeatValuesrandomInputOne>false</repeatValuesrandomInputOne>
+          <IntegerDataGeneratorMinValuerandomInputOne>1</IntegerDataGeneratorMinValuerandomInputOne>
+          <IntegerDataGeneratorMaxValuerandomInputOne>100</IntegerDataGeneratorMaxValuerandomInputOne>
+          <IntegerDataGeneratorStepValuerandomInputOne>1</IntegerDataGeneratorStepValuerandomInputOne>
+          <IntegerDataGeneratorConsequentValuesrandomInputOne>false</IntegerDataGeneratorConsequentValuesrandomInputOne>
+          <GeneratorType1>CITY</GeneratorType1>
+          <PropertyName1>randomInputTwo</PropertyName1>
+          <repetitionCountrandomInputTwo>0</repetitionCountrandomInputTwo>
+          <repeatValuesrandomInputTwo>false</repeatValuesrandomInputTwo>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>randomInputOne</con:property>
+      <con:property>randomInputTwo</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Request 1" id="64d0acf2-684e-4674-b286-5c0832ad12a5">
+    <con:settings/>
+    <con:config service="Smartbear Calculator" resourcePath="/add" methodName="addInput" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="c6bf5c7d-6272-479b-b423-9d6bfb1a653f" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.swaggerhub.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://18.237.105.202/add</con:originalUri>
+        <con:assertion type="JsonPath Existence Match" id="748951c0-0bd9-4a0f-9418-ed6714332f1b" name="Check for existence of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath RegEx Match" id="6dcd4541-2fca-417d-b5de-6b5cccdd267f" name="Match content of [result] using RegEx">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+            <regEx>^[0-9]*$</regEx>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="inputOne" value="${DataSource#randomInputOne}"/>
+          <con:entry key="user_key" value=""/>
+          <con:entry key="inputTwo" value="${DataSource#randomInputTwo}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>inputOne</con:entry>
+          <con:entry>inputTwo</con:entry>
+          <con:entry>user_key</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="1dd7b28a-eeed-45b6-9d5a-ecf89e56ab21">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Request 1</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>5b734283-946f-4dda-bccc-c84323e41efd</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>b5fc39ec-b84b-4f75-b849-1985a856ff65</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+  <con:tagId>dd0f9c17-e271-4c4f-b374-6dcf108ce94d</con:tagId>
+</con:testCase>

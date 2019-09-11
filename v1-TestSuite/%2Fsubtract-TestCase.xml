@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="5e635c33-74b2-4226-8a77-75886d453cbf" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="/subtract TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [/subtract] located at [/subtract]</con:description>
+  <con:settings>
+    <con:setting id="5e635c33-74b2-4226-8a77-75886d453cbffileName">%2Fsubtract-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="88ae39d9-b2f8-4425-9958-b6eccd2d03d8">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>2</generatorsTotalNumber>
+          <lastSelectedProperty>1</lastSelectedProperty>
+          <GeneratorType0>INT</GeneratorType0>
+          <PropertyName0>randomInputOne</PropertyName0>
+          <repetitionCountrandomInputOne>0</repetitionCountrandomInputOne>
+          <repeatValuesrandomInputOne>false</repeatValuesrandomInputOne>
+          <IntegerDataGeneratorMinValuerandomInputOne>1</IntegerDataGeneratorMinValuerandomInputOne>
+          <IntegerDataGeneratorMaxValuerandomInputOne>100</IntegerDataGeneratorMaxValuerandomInputOne>
+          <IntegerDataGeneratorStepValuerandomInputOne>1</IntegerDataGeneratorStepValuerandomInputOne>
+          <IntegerDataGeneratorConsequentValuesrandomInputOne>false</IntegerDataGeneratorConsequentValuesrandomInputOne>
+          <GeneratorType1>INT</GeneratorType1>
+          <PropertyName1>randomInputTwo</PropertyName1>
+          <repetitionCountrandomInputTwo>0</repetitionCountrandomInputTwo>
+          <repeatValuesrandomInputTwo>false</repeatValuesrandomInputTwo>
+          <IntegerDataGeneratorMinValuerandomInputTwo>1</IntegerDataGeneratorMinValuerandomInputTwo>
+          <IntegerDataGeneratorMaxValuerandomInputTwo>100</IntegerDataGeneratorMaxValuerandomInputTwo>
+          <IntegerDataGeneratorStepValuerandomInputTwo>1</IntegerDataGeneratorStepValuerandomInputTwo>
+          <IntegerDataGeneratorConsequentValuesrandomInputTwo>false</IntegerDataGeneratorConsequentValuesrandomInputTwo>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>randomInputOne</con:property>
+      <con:property>randomInputTwo</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Request 1" id="bcff04d7-83f2-4a2a-9621-85e43e5401fb">
+    <con:settings/>
+    <con:config service="Smartbear Calculator" resourcePath="/subtract" methodName="subtractInput" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="cc518503-9395-48b8-bd2e-0686a78379f3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.swaggerhub.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://api.swaggerhub.com/subtract</con:originalUri>
+        <con:assertion type="JsonPath Existence Match" id="caaf030f-172c-41da-ad59-0b4cc36d6be0" name="Check for existence of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath RegEx Match" id="cc680c81-ce19-4d3b-a75a-bbeee12ebda9" name="Match content of [result] using RegEx">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+            <regEx>^-?\d*\.{0,1}\d+$</regEx>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="MessageContentAssertion" id="c82f9288-d925-45b0-a29a-38218d62e67f" name="Message Content Assertion">
+          <con:configuration xsi:type="con:MessageContentAssertion">
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://api.swaggerhub.com/subtract';
+//ns1:Response[1]/ns1:result[1]</con:xpath>
+              <con:element>result</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>18</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:originalMessage>&lt;Response xmlns="https://api.swaggerhub.com/subtract">
+   &lt;result>18&lt;/result>
+&lt;/Response></con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="inputOne" value="${DataSource#randomInputOne}"/>
+          <con:entry key="inputTwo" value="${DataSource#randomInputTwo}"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="b26d7063-db08-4768-b86f-546be750c4a0">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Request 1</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>b26d7063-db08-4768-b86f-546be750c4a0</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+  <con:tagId>dd0f9c17-e271-4c4f-b374-6dcf108ce94d</con:tagId>
+</con:testCase>

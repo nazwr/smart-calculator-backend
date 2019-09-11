@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="status" path="/status" id="55eb9ecd-ec7d-4995-90aa-e472c82a7665" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="55eb9ecd-ec7d-4995-90aa-e472c82a7665fileName">status</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="bba813e8-ccb0-49c0-acfc-c56427d31b48" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>user_key</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="cf75974a-f2c3-4823-ae1a-2fee8fc74e69" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://localhost:8088/</con:endpoint>
+      <con:request/>
+      <con:originalUri>http://localhost/status</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters>
+        <entry key="user_key" value="b0da5927e08cfe925f4107186c7fa34a" xmlns="http://eviware.com/soapui/config"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>user_key</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

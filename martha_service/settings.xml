@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockService id="0f7f7fae-f8b1-4f65-a58b-12746746b253" port="8088" path="/" host="localhost" name="martha_service" routeModeEnabled="true" addUnmatchedOperation="false" routeEndpoint="http://34.222.48.79:8050" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0f7f7fae-f8b1-4f65-a58b-12746746b253fileName">martha_service</con:setting>
+  </con:settings>
+  <con:properties/>
+  <con:constraints>
+    <con:congestion>0</con:congestion>
+    <con:inputBandwidth>-1</con:inputBandwidth>
+    <con:outputBandwidth>-1</con:outputBandwidth>
+    <con:maxThreadPoolCapacity>20</con:maxThreadPoolCapacity>
+    <con:coreThreadPoolCapacity>5</con:coreThreadPoolCapacity>
+    <con:virtError>
+      <con:start>0</con:start>
+      <con:endless>true</con:endless>
+    </con:virtError>
+  </con:constraints>
+  <con:headerValidator type="NONE"/>
+</con:restMockService>

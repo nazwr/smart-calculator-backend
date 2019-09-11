@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/subtract" path="/subtract" id="a1f1af4f-df61-4ed9-9df1-6fa6a5e1c86b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a1f1af4f-df61-4ed9-9df1-6fa6a5e1c86bfileName">%2Fsubtract</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="subtractInput" id="dd3c9c95-eb90-4508-b2c1-9771edf7c118" method="POST">
+    <con:description>Subtract inputOne from inputTwo</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>inputOne</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:description>First input to resolve</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>inputTwo</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:description>First input to resolve</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "result" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "message" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="cc518503-9395-48b8-bd2e-0686a78379f3" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.swaggerhub.com</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://api.swaggerhub.com/subtract</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters>
+        <con:entry key="inputOne" value="20"/>
+        <con:entry key="inputTwo" value="5"/>
+      </con:parameters>
+      <con:environmentSpec>
+        <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

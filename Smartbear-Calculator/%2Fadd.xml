@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/add" path="/add" id="bd273cc9-f6cf-496b-95b2-ad5735f0ebad" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="bd273cc9-f6cf-496b-95b2-ad5735f0ebadfileName">%2Fadd</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="addInput" id="1aedc849-e3f4-46e5-bac1-e8c950963d88" method="POST">
+    <con:description>add two numbers together</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>inputOne</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:description>First input to resolve</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>inputTwo</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:description>First input to resolve</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>user_key</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "result" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "message" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="c6bf5c7d-6272-479b-b423-9d6bfb1a653f" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://34.222.48.79:8050</con:endpoint>
+      <con:request/>
+      <con:originalUri>http://18.237.105.202/add</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters>
+        <con:entry key="inputOne" value="35"/>
+        <con:entry key="user_key" value="b0da5927e08cfe925f4107186c7fa34a"/>
+        <con:entry key="inputTwo" value="20"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>inputOne</con:entry>
+        <con:entry>inputTwo</con:entry>
+        <con:entry>user_key</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

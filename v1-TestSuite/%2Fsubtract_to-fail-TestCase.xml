@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="19892707-a781-44dd-b01d-23e778772f84" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="/subtract_to fail TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [/add] located at [/add]</con:description>
+  <con:settings>
+    <con:setting id="19892707-a781-44dd-b01d-23e778772f84fileName">%2Fsubtract_to-fail-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="01e8527c-30ae-48f7-9484-63ecc02b8643">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>2</generatorsTotalNumber>
+          <lastSelectedProperty>1</lastSelectedProperty>
+          <GeneratorType0>INT</GeneratorType0>
+          <PropertyName0>randomInputOne</PropertyName0>
+          <repetitionCountrandomInputOne>0</repetitionCountrandomInputOne>
+          <repeatValuesrandomInputOne>false</repeatValuesrandomInputOne>
+          <IntegerDataGeneratorMinValuerandomInputOne>1</IntegerDataGeneratorMinValuerandomInputOne>
+          <IntegerDataGeneratorMaxValuerandomInputOne>100</IntegerDataGeneratorMaxValuerandomInputOne>
+          <IntegerDataGeneratorStepValuerandomInputOne>1</IntegerDataGeneratorStepValuerandomInputOne>
+          <IntegerDataGeneratorConsequentValuesrandomInputOne>false</IntegerDataGeneratorConsequentValuesrandomInputOne>
+          <GeneratorType1>CITY</GeneratorType1>
+          <PropertyName1>randomInputTwo</PropertyName1>
+          <repetitionCountrandomInputTwo>0</repetitionCountrandomInputTwo>
+          <repeatValuesrandomInputTwo>false</repeatValuesrandomInputTwo>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>randomInputOne</con:property>
+      <con:property>randomInputTwo</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Subtract" id="5632771e-65a8-4956-8fee-e670caca9309">
+    <con:settings/>
+    <con:config service="Smartbear Calculator" resourcePath="/subtract" methodName="subtractInput" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Subtract" id="cc518503-9395-48b8-bd2e-0686a78379f3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.swaggerhub.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://api.swaggerhub.com/subtract</con:originalUri>
+        <con:assertion type="JsonPath Existence Match" id="e7d0cf7c-f9b0-494f-a5ef-02d83f788e3d" name="Check for existence of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath RegEx Match" id="8e16d9c0-360c-45a4-b842-893f0286598c" name="Match content of [result] using RegEx">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+            <regEx>^[0-9]*$</regEx>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="inputOne" value="${DataSource#randomInputOne}"/>
+          <con:entry key="inputTwo" value="${DataSource#randomInputTwo}"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="2147ca3b-d4d7-4147-827d-493daf96b9ba">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Request 1</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>5b734283-946f-4dda-bccc-c84323e41efd</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>b5fc39ec-b84b-4f75-b849-1985a856ff65</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+  <con:tagId>dd0f9c17-e271-4c4f-b374-6dcf108ce94d</con:tagId>
+</con:testCase>

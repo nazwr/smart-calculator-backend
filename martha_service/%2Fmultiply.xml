@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/multiply" method="POST" resourcePath="/multiply" id="01dc9ebb-1244-4eff-9b94-a4e116b9e846" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="01dc9ebb-1244-4eff-9b94-a4e116b9e846fileName">%2Fmultiply</con:setting>
+  </con:settings>
+  <con:defaultResponse>Response 2</con:defaultResponse>
+  <con:dispatchStyle>PARAMETER</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer>
+    <con:ParameterDispatcherRule>
+      <con:ruleName>Rule 1</con:ruleName>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EXISTS</con:parameterOperationType>
+        <con:parameterName>inputOne</con:parameterName>
+        <con:parameterValue/>
+      </con:parameterDispatcherCondition>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EXISTS</con:parameterOperationType>
+        <con:parameterName>inputTwo</con:parameterName>
+        <con:parameterValue/>
+      </con:parameterDispatcherCondition>
+      <con:responseName>Response 1</con:responseName>
+    </con:ParameterDispatcherRule>
+  </con:parameterDispatcherRuleContainer>
+  <con:routeEnabled>true</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:response name="Response 1" id="92c66039-39ee-473c-950e-b484b4f556fd" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+	"result": 9990
+}</con:responseContent>
+  </con:response>
+  <con:response name="Response 2" id="fe9e0f06-eb8d-4a15-a45a-082fcc2d67be" httpResponseStatus="404" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+</con:restMockAction>

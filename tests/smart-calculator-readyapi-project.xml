@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="f8d2cdda-c704-4bd9-bd76-f0739472e583" created="2.6.0" activeEnvironment="remote_actual_v2" name="smart-calculator" resourceRoot="${projectDir}" updated="2.7.0 2019-04-30T17:12:05Z" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="f8d2cdda-c704-4bd9-bd76-f0739472e583" created="2.6.0" activeEnvironment="remote_actual_v1" name="smart-calculator" resourceRoot="${projectDir}" updated="2.8.0 2019-07-23T17:43:45Z" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="f8d2cdda-c704-4bd9-bd76-f0739472e583fileName">smart-calculator</con:setting>
     <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerUIAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
@@ -152,7 +152,7 @@
   </con:environment>
   <con:environment id="cc97aab8-9e01-400e-99ce-ef4d04ce1b86" name="remote_actual_v1">
     <con:service type="REST" name="Smartbear Calculator">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://34.215.16.155:8050</con:endpoint>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://35.164.102.202:8050</con:endpoint>
     </con:service>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
@@ -191,7 +191,16 @@
       <con:authProfile>No Authorization</con:authProfile>
     </con:entry>
   </con:environmentSpec>
-  <con:tags/>
+  <con:tags>
+    <con:tag>
+      <con:id>dd0f9c17-e271-4c4f-b374-6dcf108ce94d</con:id>
+      <con:name>v1</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>8dfec6af-c124-4e0b-b7d3-a3dcb0ba3407</con:id>
+      <con:name>v2</con:name>
+    </con:tag>
+  </con:tags>
   <con:interface xsi:type="con:RestService" id="58da7146-a7ef-4d40-adca-7139ea1f3a50" name="Smartbear Calculator" type="rest_ex" wadlVersion="https://swagger.io/swagger2/specification" definitionUrl="https://api.swaggerhub.com/apis/Design-Swagger/smart-calculator/1.0.0/swagger.json" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:description>A simple calculator for internal consumption</con:description>
     <con:settings>
@@ -677,6 +686,7 @@
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
       </con:environmentSpec>
+      <con:tagId>dd0f9c17-e271-4c4f-b374-6dcf108ce94d</con:tagId>
     </con:testCase>
     <con:testCase id="5e635c33-74b2-4226-8a77-75886d453cbf" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="/subtract TestCase" searchProperties="true" timeout="0">
       <con:description>The test case generated for the REST resource [/subtract] located at [/subtract]</con:description>
@@ -810,6 +820,7 @@
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
       </con:environmentSpec>
+      <con:tagId>dd0f9c17-e271-4c4f-b374-6dcf108ce94d</con:tagId>
     </con:testCase>
     <con:testCase id="6677521c-e93f-4f9e-ba09-4230ae2d12e5" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="/add_to fail TestCase" searchProperties="true" timeout="0">
       <con:description>The test case generated for the REST resource [/add] located at [/add]</con:description>
@@ -932,6 +943,7 @@
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
       </con:environmentSpec>
+      <con:tagId>dd0f9c17-e271-4c4f-b374-6dcf108ce94d</con:tagId>
     </con:testCase>
     <con:testCase id="19892707-a781-44dd-b01d-23e778772f84" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="/subtract_to fail TestCase" searchProperties="true" timeout="0">
       <con:description>The test case generated for the REST resource [/add] located at [/add]</con:description>
@@ -1048,6 +1060,7 @@
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
       </con:environmentSpec>
+      <con:tagId>dd0f9c17-e271-4c4f-b374-6dcf108ce94d</con:tagId>
     </con:testCase>
     <con:testCase id="3fd208be-b3c3-4f35-b6a7-46fa7ef86c11" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="/multiply" searchProperties="true" timeout="0">
       <con:settings>
@@ -1090,6 +1103,7 @@
       </con:testStep>
       <con:properties/>
       <con:reportParameters/>
+      <con:tagId>8dfec6af-c124-4e0b-b7d3-a3dcb0ba3407</con:tagId>
     </con:testCase>
   </con:testSuite>
   <con:restMockService id="0f7f7fae-f8b1-4f65-a58b-12746746b253" port="8088" path="/" host="localhost" name="martha_service" routeModeEnabled="true" addUnmatchedOperation="false" routeEndpoint="http://34.222.48.79:8050">

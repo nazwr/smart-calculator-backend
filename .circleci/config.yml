@@ -21,11 +21,11 @@ jobs:
       - checkout
       - run: apt-get update
       - run: apt -y install nodejs
-      - run: apt -y install build-essential
+      # - run: apt -y install build-essential
       - run: apt -y install npm
       - run: npm install -g testengine-cli
       - run: testengine --version
-      - run: testengine -u circleci -p circlecitest -H http://54.202.57.183:8080/ project run output=./reports format=junit ./tests/smart-calculator-readyapi-project.xml
+      - run: testengine -u circleci -p circlecitest -H http://54.202.57.183:8080/ run project output=./reports format=junit ./tests/smart-calculator-readyapi-project.xml
       - store_artifacts:
           path: ./reports
       - store_test_results: 

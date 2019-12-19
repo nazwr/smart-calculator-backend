@@ -1,0 +1,162 @@
+---
+swagger: "2.0"
+info:
+  description: A simple calculator for internal consumption
+  version: 2.0.0
+  title: Smartbear Calculator
+  contact:
+    email: math.whizz@smartbear.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+schemes:
+- http
+- https
+paths:
+  /add:
+    post:
+      summary: add two numbers together
+      operationId: addInput
+      produces:
+      - application/json
+      parameters:
+      - name: inputOne
+        in: query
+        description: First input to resolve
+        required: true
+        type: string
+      - name: inputTwo
+        in: query
+        description: First input to resolve
+        required: true
+        type: string
+      responses:
+        200:
+          description: Successful operation.
+          schema:
+            $ref: "#/definitions/standardResponse"
+        404:
+          description: Bad input.
+          schema:
+            $ref: "#/definitions/standardError"
+      x-swagger-router-controller: "Default"
+  /subtract:
+    post:
+      summary: Subtract inputOne from inputTwo
+      operationId: subtractInput
+      produces:
+      - application/json
+      parameters:
+      - name: inputOne
+        in: query
+        description: First input to resolve
+        required: true
+        type: string
+      - name: inputTwo
+        in: query
+        description: First input to resolve
+        required: true
+        type: string
+      responses:
+        200:
+          description: Successful operation.
+          schema:
+            $ref: "#/definitions/standardResponse_2"
+        404:
+          description: Bad input.
+          schema:
+            $ref: "#/definitions/standardError_2"
+      x-swagger-router-controller: "Default"
+  /multiply:
+    post:
+      summary: "Multiply inputOne and inputTwo"
+      operationId: "multiplyInput"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "inputOne"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      - name: "inputTwo"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful operation."
+          schema:
+            $ref: "#/definitions/standardResponse_2"
+        404:
+          description: "Bad input."
+          schema:
+            $ref: "#/definitions/standardError_2"
+      x-swagger-router-controller: "Default"
+  /divide:
+    post:
+      summary: "Divdie inputOne into inputTwo"
+      operationId: "divideInput"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "inputOne"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      - name: "inputTwo"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful operation."
+          schema:
+            $ref: "#/definitions/standardResponse_2"
+        404:
+          description: "Bad input."
+          schema:
+            $ref: "#/definitions/standardError_2"
+      x-swagger-router-controller: "Default"
+definitions:
+  standardResponse:
+    type: "object"
+    required:
+    - result
+    properties:
+      result:
+        type: "string"
+        example: "1234567890"
+    example:
+      result: "1234567890"
+  standardError:
+    type: "object"
+    required:
+    - "message"
+    properties:
+      message:
+        type: "string"
+        example: "Error in request"
+  standardResponse_2:
+    type: "object"
+    required:
+    - result
+    properties:
+      result:
+        type: "string"
+        example: "1234567890"
+    example:
+      result: "1234567890"
+  standardError_2:
+    type: "object"
+    required:
+    - message
+    properties:
+      message:
+        type: string
+        x-disabled-for-amazon-gateway:
+          example: Error in request
+x-aws-api-id: 0yujjrhfpi

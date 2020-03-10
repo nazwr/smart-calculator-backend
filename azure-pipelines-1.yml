@@ -20,12 +20,12 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
-    ls ${System.DefaultWorkingDirectory}
+    ls $(System.DefaultWorkingDirectory)
   displayName: List
 
 - task: TestEngine@1
   inputs:
-    filePath: ${System.DefaultWorkingDirectory}/tests/smart-calculator-readyapi-project._with_secure.xml
+    filePath: $(System.DefaultWorkingDirectory)/tests/smart-calculator-readyapi-project._with_secure.xml
     serverUrl: 'http://ec2-52-39-197-22.us-west-2.compute.amazonaws.com:8080/'
     serverUsername: 'azure'
     serverPassword: 'azureagent'

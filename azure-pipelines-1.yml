@@ -29,3 +29,6 @@ steps:
     serverUrl: 'http://ec2-52-39-197-22.us-west-2.compute.amazonaws.com:8080/'
     serverUsername: 'azure'
     serverPassword: 'azureagent'
+    publishTestResults: true
+
+

@@ -16,7 +16,7 @@
     "connect": "^3.7.0",
     "js-yaml": "^3.13.1",
     "swagger-tools": "0.10.1",
-    "lodash": ">=4.17.12",
+    "lodash": ">=4.17.19",
     "js-yaml": ">=3.13.1",
     "superagent": ">=3.7.0"
   }

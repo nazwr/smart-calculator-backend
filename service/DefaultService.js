@@ -30,19 +30,19 @@ exports.addInput = function(inputOne,inputTwo) {
  * inputTwo String First input to resolve
  * returns standardResponse_2
  **/
-exports.divideInput = function(inputOne,inputTwo) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-  "result" : "1234567890"
-};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
-}
+// exports.divideInput = function(inputOne,inputTwo) {
+//   return new Promise(function(resolve, reject) {
+//     var examples = {};
+//     examples['application/json'] = {
+//   "result" : "1234567890"
+// };
+//     if (Object.keys(examples).length > 0) {
+//       resolve(examples[Object.keys(examples)[0]]);
+//     } else {
+//       resolve();
+//     }
+//   });
+// }
 
 
 /**
@@ -52,19 +52,19 @@ exports.divideInput = function(inputOne,inputTwo) {
  * inputTwo String First input to resolve
  * returns standardResponse_2
  **/
-exports.multiplyInput = function(inputOne,inputTwo) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-  "result" : "1234567890"
-};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
-}
+// exports.multiplyInput = function(inputOne,inputTwo) {
+//   return new Promise(function(resolve, reject) {
+//     var examples = {};
+//     examples['application/json'] = {
+//   "result" : "1234567890"
+// };
+//     if (Object.keys(examples).length > 0) {
+//       resolve(examples[Object.keys(examples)[0]]);
+//     } else {
+//       resolve();
+//     }
+//   });
+// }
 
 
 /**

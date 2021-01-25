@@ -1,6 +1,6 @@
 # smart-calculator-backend
 
-## Front End Application [Here] (https://github.com/nate01776/smart-calculator)
+## Front End Application [Here](https://github.com/nate01776/smart-calculator)
 
 ### Setup
 * Clone repository
@@ -11,9 +11,9 @@
 
 ### Notes
 * ReadyAPI project w/pre-configured calls is in the `/tests` folder
-* There are *2* branches in this repository, 
-** `main` will serve the full API including all functions
-** `initial` will serve ONLY /add and /subtract
+* There are *2* branches in this repository
+    - `main` will serve the full API including all functions
+    - `initial` will serve ONLY /add and /subtract
 
 ## Demo Flow
 * `initial` branch should be running

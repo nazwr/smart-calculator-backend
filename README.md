@@ -12,7 +12,7 @@
 ### Notes
 * ReadyAPI project w/pre-configured calls is in the `/tests` folder
 * There are *2* branches in this repository
-    - `main` will serve the full API including all functions
+    - `master` will serve the full API including all functions
     - `initial` will serve ONLY /add and /subtract
 
 ## Demo Flow

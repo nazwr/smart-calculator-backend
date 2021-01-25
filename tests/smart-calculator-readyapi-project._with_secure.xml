@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="f8d2cdda-c704-4bd9-bd76-f0739472e583" created="2.6.0" activeEnvironment="local_dev" name="smart-calculator" resourceRoot="${projectDir}" updated="3.0.0 2019-11-05T14:42:03Z" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="f8d2cdda-c704-4bd9-bd76-f0739472e583" created="2.6.0" activeEnvironment="virt" name="smart-calculator" resourceRoot="${projectDir}" updated="3.0.0 2019-11-05T14:42:03Z" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="f8d2cdda-c704-4bd9-bd76-f0739472e583fileName">smart-calculator</con:setting>
     <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerUIAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
@@ -130,23 +130,9 @@ log.info(responseData)</con:script>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
-  <con:environment id="cc97aab8-9e01-400e-99ce-ef4d04ce1b86" name="remote_actual_v1">
-    <con:service type="REST" name="Smartbear Calculator">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://35.164.102.202:8050</con:endpoint>
-    </con:service>
-    <con:databaseConnectionContainer/>
-    <con:jmsConnectionContainer/>
-  </con:environment>
   <con:environment id="fa27b7ff-e69f-4aab-b5d6-b84d2fdb8a27" name="aws_gateway">
     <con:service type="REST" name="Smartbear Calculator">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://tzks159w5f.execute-api.us-west-2.amazonaws.com/QA</con:endpoint>
-    </con:service>
-    <con:databaseConnectionContainer/>
-    <con:jmsConnectionContainer/>
-  </con:environment>
-  <con:environment id="0347021d-92b7-47e4-9379-4797d4a703c9" name="remote_actual_v2">
-    <con:service type="REST" name="Smartbear Calculator">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://54.185.226.137:8050</con:endpoint>
     </con:service>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
@@ -158,11 +144,237 @@ log.info(responseData)</con:script>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
+  <con:environment id="996b3cc9-b394-4897-b157-2dc76ec5b496" name="remote">
+    <con:service type="REST" name="Smartbear Calculator">
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://sbcalc-torpor.apps.ca-central-1.starter.openshift-online.com/</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
   <con:virtServer>
     <con:name>AWS Host</con:name>
     <con:url>https://34.215.246.30:9090</con:url>
   </con:virtServer>
   <con:authRepository/>
+  <con:loadUiTest name="Load Test 1" id="7ade3ebc-3bce-4a28-a1de-7782fe2d7450">
+    <con:settings>
+      <con:setting id="soapUIObjectSourceId">9f947158-7c7b-4e03-87ff-a5f123cf05f4</con:setting>
+      <con:setting id="soapUIObjectSourceType">soapUIObjectSourceType_TestCase</con:setting>
+    </con:settings>
+    <con1:loadui-project id="2307278f-f460-467c-963e-0a40602660f4" label="Load Test 1" xmlns:con1="http://eviware.com/loadui/config">
+      <con1:properties>
+        <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+        <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">false</con1:property>
+        <con1:property propagates="true" key="ModelItem.saveReport" type="java.lang.Boolean">false</con1:property>
+        <con1:property propagates="true" key="ModelItem.reportFolder" type="java.lang.String"/>
+        <con1:property propagates="true" key="ModelItem.reportFormat" type="java.lang.String"/>
+        <con1:property propagates="true" key="Temporary project" type="java.lang.String"/>
+        <con1:property propagates="true" key="ModelItem.rate" type="java.lang.Long">10</con1:property>
+        <con1:property propagates="true" key="ModelItem.loadDistributionType" type="com.smartbear.load.facade.LoadDistributionType">PerScenario</con1:property>
+        <con1:property propagates="true" key="ModelItem.remoteMode" type="java.lang.String"/>
+        <con1:property propagates="true" key="ModelItem.id" type="java.lang.String">7ade3ebc-3bce-4a28-a1de-7782fe2d7450</con1:property>
+      </con1:properties>
+      <con1:attributes>
+        <con1:property key="limits">Time=60;</con1:property>
+      </con1:attributes>
+      <con1:addons/>
+      <con1:scene label="New Scenario" id="eccdc6be-8729-4d6a-8931-190ce3158d46">
+        <con1:properties>
+          <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+          <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="SceneItem.followProject" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="SceneItem.scenarioRatePercentage" type="java.lang.Long">100</con1:property>
+          <con1:property propagates="true" key="SceneItem.scenarioRateSpecific" type="java.lang.Long">100</con1:property>
+          <con1:property propagates="true" key="ModelItem.samplerOutputLevel" type="com.eviware.loadui.api.component.SoapUISamplerOutputLevel">TestCaseAndAllTestSteps</con1:property>
+        </con1:properties>
+        <con1:attributes>
+          <con1:property key="limits">Time=60;</con1:property>
+        </con1:attributes>
+        <con1:addons/>
+        <con1:component type="com.eviware.loadui.impl.component.IntervalComponent" label="Interval 1" id="057b6ae2-f304-4cc0-bc58-31b8f3080360" category="Scheduler">
+          <con1:properties>
+            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+            <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
+            <con1:property propagates="true" key="startAt" type="java.lang.Long">0</con1:property>
+            <con1:property propagates="true" key="duration" type="java.lang.Long">5</con1:property>
+            <con1:property propagates="true" key="unit" type="java.lang.String">Sec</con1:property>
+            <con1:property propagates="true" key="mode" type="java.lang.String">Single</con1:property>
+            <con1:property propagates="true" key="defaultMode" type="java.lang.Boolean">true</con1:property>
+          </con1:properties>
+          <con1:attributes>
+            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Interval</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:component>
+        <con1:component type="com.eviware.loadui.components.soapui.SoapUISamplerComponent" label="Stateful_Virt:create and validate" id="8c8dc512-c97b-4de9-aeb2-8234ff3f8c8a" category="Runners">
+          <con1:properties>
+            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+            <con1:property propagates="true" key="concurrentSamples" type="java.lang.Long">1000</con1:property>
+            <con1:property propagates="true" key="property_name_is_not_relevant_for_private_property" type="java.lang.Long">9223372036854775807</con1:property>
+            <con1:property propagates="true" key="maxQueueSize" type="java.lang.Long">1000</con1:property>
+            <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
+            <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
+            <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">9f947158-7c7b-4e03-87ff-a5f123cf05f4</con1:property>
+            <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
+            <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
+            <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
+            <con1:property propagates="true" key="closeConnectionsAfterRequest" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="disableSoapuiAssertions" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="forceShareDatasources" type="java.lang.Boolean">true</con1:property>
+          </con1:properties>
+          <con1:attributes>
+            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ready API TestCase Runner</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:component>
+        <con1:component type="com.eviware.loadui.impl.component.generators.RampUpVU" label="Ramp Load 1" id="8b502c97-4b43-49fd-8d71-e7e30ab2d245" category="Generators">
+          <con1:properties>
+            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+            <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="limitVU" type="java.lang.Long">1000</con1:property>
+            <con1:property propagates="true" key="peakVU" type="java.lang.Long">100</con1:property>
+            <con1:property propagates="true" key="baseVU" type="java.lang.Long">0</con1:property>
+            <con1:property propagates="true" key="waitTime" type="java.lang.Long">1000</con1:property>
+            <con1:property propagates="true" key="rampDuration" type="java.lang.Long">60</con1:property>
+          </con1:properties>
+          <con1:attributes>
+            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ramp Load</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:component>
+        <con1:connection outputTerminalId="057b6ae2-f304-4cc0-bc58-31b8f3080360/outgoingTerminal" inputTerminalId="8b502c97-4b43-49fd-8d71-e7e30ab2d245/stateTerminal"/>
+        <con1:connection outputTerminalId="8b502c97-4b43-49fd-8d71-e7e30ab2d245/triggerTerminal" inputTerminalId="8c8dc512-c97b-4de9-aeb2-8234ff3f8c8a/triggerTerminal"/>
+        <con1:connection outputTerminalId="8c8dc512-c97b-4de9-aeb2-8234ff3f8c8a/runningTerminal" inputTerminalId="8b502c97-4b43-49fd-8d71-e7e30ab2d245/Sample Count"/>
+      </con1:scene>
+      <con1:statistics>
+        <con1:page title="DefaultLoadUIStatisticPage">
+          <con1:chartGroup type="com.eviware.loadui.api.statistics.model.chart.line.LineChartView" title="" groupType="Monitors">
+            <con1:attributes>
+              <con1:property key="GroupId">d46aa366-8934-4f5a-9316-9bb8248394cc</con1:property>
+            </con1:attributes>
+          </con1:chartGroup>
+          <con1:chartGroup type="com.eviware.loadui.api.statistics.model.chart.line.LineChartView" title="New Statistics Group" groupType="Graph">
+            <con1:chart statisticHolder="8c8dc512-c97b-4de9-aeb2-8234ff3f8c8a">
+              <con1:attributes>
+                <con1:property key="_CHART_segments">79:36:8c8dc512-c97b-4de9-aeb2-8234ff3f8c8a22:submitQuery: TimeTaken7:AVERAGE4:main75:36:8c8dc512-c97b-4de9-aeb2-8234ff3f8c8a22:submitQuery: TimeTaken3:MAX4:main83:36:8c8dc512-c97b-4de9-aeb2-8234ff3f8c8a26:checkLastResult: TimeTaken7:AVERAGE4:main79:36:8c8dc512-c97b-4de9-aeb2-8234ff3f8c8a26:checkLastResult: TimeTaken3:MAX4:main</con1:property>
+              </con1:attributes>
+            </con1:chart>
+            <con1:attributes>
+              <con1:property key="GroupId">cf8234df-9b30-4b43-8ad1-b5b79ba03cd4</con1:property>
+            </con1:attributes>
+          </con1:chartGroup>
+          <con1:chartGroup type="com.eviware.loadui.api.statistics.model.chart.line.LineChartView" title="New Statistics Group 1" groupType="Graph">
+            <con1:chart statisticHolder="2307278f-f460-467c-963e-0a40602660f4">
+              <con1:attributes>
+                <con1:property key="_CHART_segments">65:36:2307278f-f460-467c-963e-0a40602660f410:Running VU5:TOTAL4:main73:36:2307278f-f460-467c-963e-0a40602660f418:Assertion Failures5:TOTAL4:main79:36:2307278f-f460-467c-963e-0a40602660f418:Assertion Failures10:PER_SECOND4:main</con1:property>
+              </con1:attributes>
+            </con1:chart>
+            <con1:attributes>
+              <con1:property key="GroupId">c0911a9b-0e75-4ccf-82ea-86acd511ad5e</con1:property>
+            </con1:attributes>
+          </con1:chartGroup>
+        </con1:page>
+      </con1:statistics>
+    </con1:loadui-project>
+    <con:loadUITestScenario projectId="2307278f-f460-467c-963e-0a40602660f4" scenarioId="eccdc6be-8729-4d6a-8931-190ce3158d46" name="New Scenario" id="9a340639-e9b4-4651-8ec2-7433f5b78abf">
+      <con:settings/>
+    </con:loadUITestScenario>
+    <con:loadUIPanelData id="5cbffd10-39ce-40a8-a9ff-bbca3783206f">
+      <con:panel>Log</con:panel>
+      <con:data>
+        <con:paramName>column_width@Timestamp</con:paramName>
+        <con:paramValue>90</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Timestamp</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@ID</con:paramName>
+        <con:paramValue>79</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@ID</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Test step status</con:paramName>
+        <con:paramValue>128</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Test step status</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@TriggerTimestamp</con:paramName>
+        <con:paramValue>90</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@TriggerTimestamp</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@TimeTaken</con:paramName>
+        <con:paramValue>125</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@TimeTaken</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@_wait_time_</con:paramName>
+        <con:paramValue>115</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@_wait_time_</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Bytes</con:paramName>
+        <con:paramValue>54</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Bytes</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@HTTP Status</con:paramName>
+        <con:paramValue>97</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@HTTP Status</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@CurrentlyRunning</con:paramName>
+        <con:paramValue>82</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@CurrentlyRunning</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Request</con:paramName>
+        <con:paramValue>71</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Request</con:paramName>
+        <con:paramValue>false</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Response</con:paramName>
+        <con:paramValue>81</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Response</con:paramName>
+        <con:paramValue>false</con:paramValue>
+      </con:data>
+    </con:loadUIPanelData>
+    <con:statistics id="cf8234df-9b30-4b43-8ad1-b5b79ba03cd4"/>
+    <con:statistics id="c0911a9b-0e75-4ccf-82ea-86acd511ad5e"/>
+    <con:reportParameters/>
+  </con:loadUiTest>
   <con:environmentSpec>
     <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
       <con:authProfile>No Authorization</con:authProfile>
@@ -261,7 +473,7 @@ log.info(responseData)</con:script>
           <con:settings>
             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
           </con:settings>
-          <con:endpoint>http://34.222.48.79:8050</con:endpoint>
+          <con:endpoint>http://localhost:8089</con:endpoint>
           <con:request/>
           <con:originalUri>http://18.237.105.202/add</con:originalUri>
           <con:credentials>
@@ -271,9 +483,9 @@ log.info(responseData)</con:script>
           <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
           <con:jmsPropertyConfig/>
           <con:parameters>
-            <con:entry key="inputOne" value="35"/>
-            <con:entry key="user_key" value="b0da5927e08cfe925f4107186c7fa34a"/>
-            <con:entry key="inputTwo" value="20"/>
+            <con:entry key="inputOne" value="65"/>
+            <con:entry key="user_key" value="tsanchez"/>
+            <con:entry key="inputTwo" value="12"/>
           </con:parameters>
           <con:parameterOrder>
             <con:entry>inputOne</con:entry>
@@ -286,6 +498,9 @@ log.info(responseData)</con:script>
             </con:entry>
             <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
               <con:authProfile>Inherit From Parent</con:authProfile>
+            </con:entry>
+            <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+              <con:authProfile>No Authorization</con:authProfile>
             </con:entry>
           </con:environmentSpec>
         </con:request>
@@ -358,6 +573,9 @@ log.info(responseData)</con:script>
           <con:environmentSpec>
             <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
               <con:authProfile>Inherit From Parent</con:authProfile>
+            </con:entry>
+            <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+              <con:authProfile>No Authorization</con:authProfile>
             </con:entry>
           </con:environmentSpec>
         </con:request>
@@ -437,6 +655,9 @@ log.info(responseData)</con:script>
             <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
               <con:authProfile>Inherit From Parent</con:authProfile>
             </con:entry>
+            <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+              <con:authProfile>No Authorization</con:authProfile>
+            </con:entry>
           </con:environmentSpec>
         </con:request>
         <con:environmentSpec>
@@ -486,11 +707,16 @@ log.info(responseData)</con:script>
           <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
           <con:jmsPropertyConfig/>
           <con:parameters>
-            <con:entry key="user_key" value="b0da5927e08cfe925f4107186c7fa34a"/>
+            <con:entry key="user_key" value="nwright"/>
           </con:parameters>
           <con:parameterOrder>
             <con:entry>user_key</con:entry>
           </con:parameterOrder>
+          <con:environmentSpec>
+            <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+              <con:authProfile>No Authorization</con:authProfile>
+            </con:entry>
+          </con:environmentSpec>
         </con:request>
       </con:method>
     </con:resource>
@@ -634,6 +860,9 @@ log.info(responseData)</con:script>
               <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
                 <con:authProfile>Inherit From Parent</con:authProfile>
               </con:entry>
+              <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+                <con:authProfile>No Authorization</con:authProfile>
+              </con:entry>
             </con:environmentSpec>
           </con:restRequest>
         </con:config>
@@ -644,6 +873,75 @@ log.info(responseData)</con:script>
           <dataSourceStep>DataSource</dataSourceStep>
           <targetStep>Request 1</targetStep>
           <discardResults>true</discardResults>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step Name" id="441cc5c6-29a1-4d69-a4e9-ed671440f2f4">
+        <con:settings/>
+        <con:config service="Smartbear Calculator" resourcePath="/add" methodName="addInput" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step Name" id="c6bf5c7d-6272-479b-b423-9d6bfb1a653f" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:8089</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://18.237.105.202/add</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="4945055d-d681-4970-8c5b-51048c56a09b" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Response SLA Assertion" id="934a1ccf-ec16-4751-96c7-d32e3e5c32ea" name="Response SLA">
+              <con:configuration>
+                <SLA>200</SLA>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="MessageContentAssertion" id="0bfa1dc4-0098-4def-82ba-ebb760ce8a01" name="Message Content Assertion">
+              <con:configuration xsi:type="con:MessageContentAssertion">
+                <con:elements>
+                  <con:xpath>declare namespace ns1='http://18.237.105.202/add';
+//ns1:Fault[1]/ns1:message[1]</con:xpath>
+                  <con:element>message</con:element>
+                  <con:type xsi:nil="true"/>
+                  <con:operator>=</con:operator>
+                  <con:enabled>true</con:enabled>
+                  <con:expectedValue>string</con:expectedValue>
+                  <con:hasValue>false</con:hasValue>
+                  <con:numberType>false</con:numberType>
+                </con:elements>
+                <con:originalMessage>&lt;Fault xmlns="http://18.237.105.202/add">
+   &lt;message>string&lt;/message>
+&lt;/Fault></con:originalMessage>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="inputOne" value="22"/>
+              <con:entry key="user_key" value="b0da5927e08cfe925f4107186c7fa34a"/>
+              <con:entry key="inputTwo" value="20"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>inputOne</con:entry>
+              <con:entry>inputTwo</con:entry>
+              <con:entry>user_key</con:entry>
+            </con:parameterOrder>
+            <con:environmentSpec>
+              <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+                <con:authProfile>Inherit From Parent</con:authProfile>
+              </con:entry>
+              <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+                <con:authProfile>Inherit From Parent</con:authProfile>
+              </con:entry>
+              <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+                <con:authProfile>No Authorization</con:authProfile>
+              </con:entry>
+            </con:environmentSpec>
+          </con:restRequest>
         </con:config>
       </con:testStep>
       <con:properties/>
@@ -773,6 +1071,9 @@ log.info(responseData)</con:script>
               <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
                 <con:authProfile>Inherit From Parent</con:authProfile>
               </con:entry>
+              <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+                <con:authProfile>No Authorization</con:authProfile>
+              </con:entry>
             </con:environmentSpec>
           </con:restRequest>
         </con:config>
@@ -891,6 +1192,9 @@ log.info(responseData)</con:script>
               <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
                 <con:authProfile>Inherit From Parent</con:authProfile>
               </con:entry>
+              <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+                <con:authProfile>No Authorization</con:authProfile>
+              </con:entry>
             </con:environmentSpec>
           </con:restRequest>
         </con:config>
@@ -1008,6 +1312,9 @@ log.info(responseData)</con:script>
               <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
                 <con:authProfile>Inherit From Parent</con:authProfile>
               </con:entry>
+              <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+                <con:authProfile>No Authorization</con:authProfile>
+              </con:entry>
             </con:environmentSpec>
           </con:restRequest>
         </con:config>
@@ -1077,6 +1384,9 @@ log.info(responseData)</con:script>
               <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
                 <con:authProfile>Inherit From Parent</con:authProfile>
               </con:entry>
+              <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+                <con:authProfile>No Authorization</con:authProfile>
+              </con:entry>
             </con:environmentSpec>
           </con:restRequest>
         </con:config>
@@ -1085,6 +1395,181 @@ log.info(responseData)</con:script>
       <con:reportParameters/>
       <con:tagId>8dfec6af-c124-4e0b-b7d3-a3dcb0ba3407</con:tagId>
     </con:testCase>
+  </con:testSuite>
+  <con:testSuite id="83169780-3960-4c90-9a9f-392ff42176a1" name="Stateful_Virt">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="9f947158-7c7b-4e03-87ff-a5f123cf05f4" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="create and validate" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" zephyrTestName="" zephyrTestId="">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="datasource" name="DataSource" id="51d07725-b006-41af-a60b-111ebd230c88">
+        <con:settings/>
+        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSource type="Data Generator">
+            <con:configuration>
+              <generatedDataCount>50</generatedDataCount>
+              <generatorsTotalNumber>3</generatorsTotalNumber>
+              <lastSelectedProperty>2</lastSelectedProperty>
+              <GeneratorType0>INT</GeneratorType0>
+              <PropertyName0>valOne</PropertyName0>
+              <repetitionCountvalOne>0</repetitionCountvalOne>
+              <repeatValuesvalOne>false</repeatValuesvalOne>
+              <IntegerDataGeneratorMinValuevalOne>1</IntegerDataGeneratorMinValuevalOne>
+              <IntegerDataGeneratorMaxValuevalOne>100</IntegerDataGeneratorMaxValuevalOne>
+              <IntegerDataGeneratorStepValuevalOne>1</IntegerDataGeneratorStepValuevalOne>
+              <IntegerDataGeneratorConsequentValuesvalOne>false</IntegerDataGeneratorConsequentValuesvalOne>
+              <GeneratorType1>INT</GeneratorType1>
+              <PropertyName1>valTwo</PropertyName1>
+              <repetitionCountvalTwo>0</repetitionCountvalTwo>
+              <repeatValuesvalTwo>false</repeatValuesvalTwo>
+              <IntegerDataGeneratorMinValuevalTwo>1</IntegerDataGeneratorMinValuevalTwo>
+              <IntegerDataGeneratorMaxValuevalTwo>100</IntegerDataGeneratorMaxValuevalTwo>
+              <IntegerDataGeneratorStepValuevalTwo>1</IntegerDataGeneratorStepValuevalTwo>
+              <IntegerDataGeneratorConsequentValuesvalTwo>false</IntegerDataGeneratorConsequentValuesvalTwo>
+              <GeneratorType2>NAME</GeneratorType2>
+              <PropertyName2>inputName</PropertyName2>
+              <repetitionCountinputName>0</repetitionCountinputName>
+              <repeatValuesinputName>false</repeatValuesinputName>
+              <NameTypeName2>FirstName</NameTypeName2>
+              <NameGenderName2>Any</NameGenderName2>
+              <escapeSpaceSequence/>
+            </con:configuration>
+          </con:dataSource>
+          <con:shared>true</con:shared>
+          <con:restartShared>true</con:restartShared>
+          <con:property>inputName</con:property>
+          <con:property>valOne</con:property>
+          <con:property>valTwo</con:property>
+          <con:completeLastOperation>true</con:completeLastOperation>
+          <con:restartOnRun>true</con:restartOnRun>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="submitQuery" id="40cbf808-1718-4139-a842-1bc8d779807f">
+        <con:settings/>
+        <con:config service="Smartbear Calculator" resourcePath="/add" methodName="addInput" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="submitQuery" id="c6bf5c7d-6272-479b-b423-9d6bfb1a653f" mediaType="application/xml" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:8089</con:endpoint>
+            <con:request>&lt;holder>
+	&lt;v>1234&lt;/v>
+&lt;/holder></con:request>
+            <con:originalUri>http://18.237.105.202/add</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="d085c43c-01a1-4f54-a309-58ce7cac0199" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="inputOne" value="${DataSource#valOne}"/>
+              <con:entry key="user_key" value="${DataSource#inputName}"/>
+              <con:entry key="inputTwo" value="${DataSource#valTwo}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>inputOne</con:entry>
+              <con:entry>inputTwo</con:entry>
+              <con:entry>user_key</con:entry>
+            </con:parameterOrder>
+            <con:environmentSpec>
+              <con:entry environmentId="0347021d-92b7-47e4-9379-4797d4a703c9">
+                <con:authProfile>Inherit From Parent</con:authProfile>
+              </con:entry>
+              <con:entry environmentId="19ef152b-6806-465d-be73-869bfad44f62">
+                <con:authProfile>Inherit From Parent</con:authProfile>
+              </con:entry>
+              <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+                <con:authProfile>No Authorization</con:authProfile>
+              </con:entry>
+            </con:environmentSpec>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="delay" name="Delay" id="595751e6-e145-4f11-80c2-4c46acfc8415">
+        <con:settings/>
+        <con:config>
+          <delay>1000</delay>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="checkLastResult" id="34ed9d2a-b8cd-4a9c-ae33-f3f2799d8099">
+        <con:settings/>
+        <con:config service="Smartbear Calculator" resourcePath="/status" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="checkLastResult" id="cf75974a-f2c3-4823-ae1a-2fee8fc74e69" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:8088/</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://localhost/status</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="a8b8e310-8516-40a2-a3a4-51e5fc3a06cd" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="e7931cff-41bb-4486-9137-a099cf20ca52" name="Contains">
+              <con:configuration>
+                <token>${submitQuery#user_key}</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="user_key" value="${submitQuery#user_key}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>user_key</con:entry>
+            </con:parameterOrder>
+            <con:environmentSpec>
+              <con:entry environmentId="996b3cc9-b394-4897-b157-2dc76ec5b496">
+                <con:authProfile>No Authorization</con:authProfile>
+              </con:entry>
+            </con:environmentSpec>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasourceloop" name="DataSource Loop" id="17a56da7-e82c-41cc-9249-4bf82ef2d4ad">
+        <con:settings/>
+        <con:config>
+          <dataSourceStep>DataSource</dataSourceStep>
+          <targetStep>submitQuery</targetStep>
+          <discardResults>true</discardResults>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>595751e6-e145-4f11-80c2-4c46acfc8415</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>51d07725-b006-41af-a60b-111ebd230c88</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>17a56da7-e82c-41cc-9249-4bf82ef2d4ad</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
   </con:testSuite>
   <con:restMockService id="0f7f7fae-f8b1-4f65-a58b-12746746b253" port="8088" path="/" host="localhost" name="martha_service" routeModeEnabled="true" addUnmatchedOperation="false" routeEndpoint="http://34.222.48.79:8050">
     <con:settings>
@@ -1165,14 +1650,11 @@ log.info(responseData)</con:script>
       </con:response>
     </con:restMockAction>
   </con:restMockService>
-  <con:restMockService id="83be6769-1828-4618-92cc-d826a15d0fd3" port="8081" path="/" host="localhost" name="Smartbear Calculator Virtual Service v1" routeModeEnabled="false" addUnmatchedOperation="true" routeUnmatchedOperation="true" routeEndpoint="http://35.164.102.202:8050">
-    <con:settings>
-      <con:setting id="83be6769-1828-4618-92cc-d826a15d0fd3fileName">Smartbear-Calculator-Virtual-Service-v1</con:setting>
-    </con:settings>
+  <con:restMockService id="1a1edece-5846-45f6-9ab9-165a1014189a" port="8081" path="/" host="localhost" name="Smartbear Calculator Virtual Service" routeModeEnabled="false" routeEndpoint="http://sbcalc-torpor.apps.ca-central-1.starter.openshift-online.com/">
+    <con:settings/>
+    <con:startScript>context.getProperties().clear()</con:startScript>
+    <con:stopScript>context.getProperties().clear()</con:stopScript>
     <con:properties/>
-    <con:afterRequestScript>def val = context.getMockResponse()
-
-log.info(val)</con:afterRequestScript>
     <con:constraints>
       <con:congestion>0</con:congestion>
       <con:inputBandwidth>-1</con:inputBandwidth>
@@ -1185,421 +1667,141 @@ log.info(val)</con:afterRequestScript>
       </con:virtError>
     </con:constraints>
     <con:headerValidator type="NONE"/>
-    <con:restMockAction name="/add" method="POST" resourcePath="/add" id="238888f1-9862-4174-bcb4-5cd196f08f26">
-      <con:settings>
-        <con:setting id="238888f1-9862-4174-bcb4-5cd196f08f26fileName">%2Fadd</con:setting>
-      </con:settings>
+    <con:restMockAction name="/add" method="POST" resourcePath="/add" id="2d3db236-b637-4c42-8cd4-03885db70a15">
+      <con:settings/>
+      <con:defaultResponse>404</con:defaultResponse>
+      <con:dispatchStyle>PARAMETER</con:dispatchStyle>
+      <con:dispatchConfig xsi:type="con:MockOperationQueryMatchDispatch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:query>
+          <con:name>expectedValue</con:name>
+          <con:type>XPath</con:type>
+          <con:query>//holder[1]/v[1]</con:query>
+          <con:match>123132</con:match>
+        </con:query>
+      </con:dispatchConfig>
+      <con:dispatchXPath/>
+      <con:parameterDispatcherRuleContainer>
+        <con:ParameterDispatcherRule>
+          <con:ruleName>Rule 1</con:ruleName>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>REGEXP</con:parameterOperationType>
+            <con:parameterName>inputOne</con:parameterName>
+            <con:parameterValue>^\d+$</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>REGEXP</con:parameterOperationType>
+            <con:parameterName>inputTwo</con:parameterName>
+            <con:parameterValue>^\d+$</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:responseName>200</con:responseName>
+        </con:ParameterDispatcherRule>
+      </con:parameterDispatcherRuleContainer>
+      <con:routeEnabled>true</con:routeEnabled>
+      <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+      <con:routeScript/>
+      <con:saveRoutedResponse>false</con:saveRoutedResponse>
+      <con:response name="200" id="d6298c99-8bdd-469c-a466-ff734f14bd7c" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+        <con:settings/>
+        <con:script>// Inbound
+def queryString = mockRequest.getQueryString().split("&amp;")
+def incomingValOne = queryString[0].split("=")[1]
+def incomingValTwo = queryString[1].split("=")[1]
+def incomingUUID = queryString[2].split("=")[1]
+
+// Outbound
+def result = incomingValOne.toInteger() + incomingValTwo.toInteger()
+mockResponse.setPropertyValue("Request", result.toString())
+
+def propObjString = "{UUID:" + incomingUUID + ", lastResult:" + result + "}"
+context.setProperty(incomingUUID, propObjString)</con:script>
+        <con:responseContent>{
+  "result" : "${#MockResponse#Request}"
+}</con:responseContent>
+      </con:response>
+      <con:response name="404" id="b07d81ec-0f3e-4ae4-87c9-71dd976f113e" httpResponseStatus="404" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+        <con:settings/>
+        <con:responseContent>{
+  "message" : "invalid request"
+}</con:responseContent>
+      </con:response>
+    </con:restMockAction>
+    <con:restMockAction name="/multiply" method="POST" resourcePath="/multiply" id="eced7954-b792-42c0-ad8d-6ec696db9790">
+      <con:settings/>
+      <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+      <con:dispatchConfig/>
+      <con:dispatchXPath/>
+      <con:routeScript/>
+      <con:response name="Response 1" id="9e5285ec-ccb0-42b9-812e-e90b9d3509e9" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+        <con:settings/>
+        <con:responseContent>{
+  "result" : "1234567890"
+}</con:responseContent>
+      </con:response>
+      <con:response name="Response 2" id="cb1530f3-5de5-4ddb-bdf6-ef4940fd4def" httpResponseStatus="404" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+        <con:settings/>
+        <con:responseContent>{
+  "message" : "Error in request"
+}</con:responseContent>
+      </con:response>
+    </con:restMockAction>
+    <con:restMockAction name="/subtract" method="POST" resourcePath="/subtract" id="81f46342-ae09-47f7-bcdc-22351348cdf0">
+      <con:settings/>
+      <con:defaultResponse>Response 1</con:defaultResponse>
+      <con:dispatchStyle>QUERY_MATCH</con:dispatchStyle>
+      <con:dispatchConfig/>
+      <con:dispatchXPath/>
+      <con:parameterDispatcherRuleContainer/>
+      <con:routeScript/>
+      <con:response name="Response 1" id="c10fb8bd-03aa-470d-a848-dd2d0afecf8b" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+        <con:settings/>
+        <con:responseContent>{
+  "result" : 0
+}</con:responseContent>
+      </con:response>
+      <con:response name="Response 2" id="5e5910b8-1bea-414a-9622-285c9cd7aa16" httpResponseStatus="404" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+        <con:settings/>
+        <con:responseContent>{
+  "message" : "string"
+}</con:responseContent>
+      </con:response>
+    </con:restMockAction>
+    <con:restMockAction name="/status" method="GET" resourcePath="/status" id="e2b3ef0f-3234-4253-83b3-c9f363c0a92b">
+      <con:settings/>
+      <con:defaultResponse>200</con:defaultResponse>
       <con:dispatchStyle>PARAMETER</con:dispatchStyle>
       <con:dispatchConfig/>
       <con:dispatchXPath/>
       <con:parameterDispatcherRuleContainer>
         <con:ParameterDispatcherRule>
-          <con:ruleName>inputOne=123&amp;inputTwo=634634&amp;user_key=</con:ruleName>
-          <con:parameterDispatcherCondition>
-            <con:parameterType>QUERY</con:parameterType>
-            <con:parameterOperationType>EQUALS</con:parameterOperationType>
-            <con:parameterName>inputTwo</con:parameterName>
-            <con:parameterValue>634634</con:parameterValue>
-          </con:parameterDispatcherCondition>
+          <con:ruleName>Rule 1</con:ruleName>
           <con:parameterDispatcherCondition>
             <con:parameterType>QUERY</con:parameterType>
             <con:parameterOperationType>EXISTS</con:parameterOperationType>
             <con:parameterName>user_key</con:parameterName>
             <con:parameterValue/>
           </con:parameterDispatcherCondition>
-          <con:parameterDispatcherCondition>
-            <con:parameterType>QUERY</con:parameterType>
-            <con:parameterOperationType>EQUALS</con:parameterOperationType>
-            <con:parameterName>inputOne</con:parameterName>
-            <con:parameterValue>123</con:parameterValue>
-          </con:parameterDispatcherCondition>
-          <con:responseName>For inputOne=123&amp;inputTwo=634634&amp;user_key=</con:responseName>
-        </con:ParameterDispatcherRule>
-        <con:ParameterDispatcherRule>
-          <con:ruleName>inputOne=123&amp;inputTwo=112&amp;user_key=</con:ruleName>
-          <con:parameterDispatcherCondition>
-            <con:parameterType>QUERY</con:parameterType>
-            <con:parameterOperationType>EQUALS</con:parameterOperationType>
-            <con:parameterName>inputTwo</con:parameterName>
-            <con:parameterValue>112</con:parameterValue>
-          </con:parameterDispatcherCondition>
-          <con:parameterDispatcherCondition>
-            <con:parameterType>QUERY</con:parameterType>
-            <con:parameterOperationType>EXISTS</con:parameterOperationType>
-            <con:parameterName>user_key</con:parameterName>
-            <con:parameterValue/>
-          </con:parameterDispatcherCondition>
-          <con:parameterDispatcherCondition>
-            <con:parameterType>QUERY</con:parameterType>
-            <con:parameterOperationType>EQUALS</con:parameterOperationType>
-            <con:parameterName>inputOne</con:parameterName>
-            <con:parameterValue>123</con:parameterValue>
-          </con:parameterDispatcherCondition>
-          <con:responseName>For inputOne=123&amp;inputTwo=112&amp;user_key=</con:responseName>
-        </con:ParameterDispatcherRule>
-        <con:ParameterDispatcherRule>
-          <con:ruleName>inputOne=123&amp;inputTwo=155&amp;user_key=</con:ruleName>
-          <con:parameterDispatcherCondition>
-            <con:parameterType>QUERY</con:parameterType>
-            <con:parameterOperationType>EQUALS</con:parameterOperationType>
-            <con:parameterName>inputTwo</con:parameterName>
-            <con:parameterValue>155</con:parameterValue>
-          </con:parameterDispatcherCondition>
-          <con:parameterDispatcherCondition>
-            <con:parameterType>QUERY</con:parameterType>
-            <con:parameterOperationType>EXISTS</con:parameterOperationType>
-            <con:parameterName>user_key</con:parameterName>
-            <con:parameterValue/>
-          </con:parameterDispatcherCondition>
-          <con:parameterDispatcherCondition>
-            <con:parameterType>QUERY</con:parameterType>
-            <con:parameterOperationType>EQUALS</con:parameterOperationType>
-            <con:parameterName>inputOne</con:parameterName>
-            <con:parameterValue>123</con:parameterValue>
-          </con:parameterDispatcherCondition>
-          <con:responseName>For inputOne=123&amp;inputTwo=155&amp;user_key=</con:responseName>
-        </con:ParameterDispatcherRule>
-        <con:ParameterDispatcherRule>
-          <con:ruleName>inputOne=123&amp;inputTwo=1231&amp;user_key=</con:ruleName>
-          <con:parameterDispatcherCondition>
-            <con:parameterType>QUERY</con:parameterType>
-            <con:parameterOperationType>EQUALS</con:parameterOperationType>
-            <con:parameterName>inputTwo</con:parameterName>
-            <con:parameterValue>1231</con:parameterValue>
-          </con:parameterDispatcherCondition>
-          <con:parameterDispatcherCondition>
-            <con:parameterType>QUERY</con:parameterType>
-            <con:parameterOperationType>EXISTS</con:parameterOperationType>
-            <con:parameterName>user_key</con:parameterName>
-            <con:parameterValue/>
-          </con:parameterDispatcherCondition>
-          <con:parameterDispatcherCondition>
-            <con:parameterType>QUERY</con:parameterType>
-            <con:parameterOperationType>EQUALS</con:parameterOperationType>
-            <con:parameterName>inputOne</con:parameterName>
-            <con:parameterValue>123</con:parameterValue>
-          </con:parameterDispatcherCondition>
-          <con:responseName>For inputOne=123&amp;inputTwo=1231&amp;user_key=</con:responseName>
+          <con:responseName>Response 1</con:responseName>
         </con:ParameterDispatcherRule>
       </con:parameterDispatcherRuleContainer>
-      <con:routeEnabled>true</con:routeEnabled>
       <con:routeScript/>
-      <con:saveRoutedResponse>true</con:saveRoutedResponse>
-      <con:response name="For inputOne=123&amp;inputTwo=634634&amp;user_key=" id="0632fabb-be05-471a-a0ae-2bcf27e6d452" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+      <con:response name="200" id="5f743dc8-8f22-4a77-9aa6-7b2b208d3360" httpResponseStatus="200" dataSource="" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json">
         <con:settings/>
-        <con:responseContent>{
-  "result": 634757
-}</con:responseContent>
-        <con:header>
-          <con:name>Access-Control-Allow-Origin</con:name>
-          <con:value>*</con:value>
-        </con:header>
-        <con:header>
-          <con:name>Connection</con:name>
-          <con:value>keep-alive</con:value>
-        </con:header>
-        <con:header>
-          <con:name>Date</con:name>
-          <con:value>Wed, 11 Sep 2019 19:52:10 GMT</con:value>
-        </con:header>
+        <con:script>def incomingUUID = mockRequest.getQueryString().split("=")[1].toString()
+def storedData = context.getProperty(incomingUUID)
+
+mockResponse.setPropertyValue("Request", storedData.toString())
+
+log.info(context.getPropertyNames().toString())</con:script>
+        <con:responseContent>"${#MockResponse#Request}"</con:responseContent>
       </con:response>
-      <con:response name="For inputOne=123&amp;inputTwo=112&amp;user_key=" id="ef2a4e6d-a96b-4b44-80ca-0dc2defb2407" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+      <con:response name="404" id="87ef6fac-4f78-46ec-806a-9a0a354bf7ae" httpResponseStatus="404" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json">
         <con:settings/>
         <con:responseContent>{
-  "result": 235
+	"message":"uuid not found"
 }</con:responseContent>
-        <con:header>
-          <con:name>Access-Control-Allow-Origin</con:name>
-          <con:value>*</con:value>
-        </con:header>
-        <con:header>
-          <con:name>Connection</con:name>
-          <con:value>keep-alive</con:value>
-        </con:header>
-        <con:header>
-          <con:name>Date</con:name>
-          <con:value>Wed, 11 Sep 2019 19:52:46 GMT</con:value>
-        </con:header>
-      </con:response>
-      <con:response name="For inputOne=123&amp;inputTwo=155&amp;user_key=" id="f4da6c90-7f56-4fe9-82da-e2c43370fa4d" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
-        <con:settings/>
-        <con:responseContent>{
-  "result": 278
-}</con:responseContent>
-        <con:header>
-          <con:name>Access-Control-Allow-Origin</con:name>
-          <con:value>*</con:value>
-        </con:header>
-        <con:header>
-          <con:name>Connection</con:name>
-          <con:value>keep-alive</con:value>
-        </con:header>
-        <con:header>
-          <con:name>Date</con:name>
-          <con:value>Wed, 11 Sep 2019 19:55:30 GMT</con:value>
-        </con:header>
-      </con:response>
-      <con:response name="For inputOne=123&amp;inputTwo=1231&amp;user_key=" id="9b236881-dd9e-4249-a117-566074016ea7" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
-        <con:settings/>
-        <con:responseContent>{
-  "result": 1354
-}</con:responseContent>
-        <con:header>
-          <con:name>Access-Control-Allow-Origin</con:name>
-          <con:value>*</con:value>
-        </con:header>
-        <con:header>
-          <con:name>Connection</con:name>
-          <con:value>keep-alive</con:value>
-        </con:header>
-        <con:header>
-          <con:name>Date</con:name>
-          <con:value>Wed, 11 Sep 2019 20:00:55 GMT</con:value>
-        </con:header>
       </con:response>
     </con:restMockAction>
   </con:restMockService>
-  <con:loadUiTest name="Load Test 1" id="c3815482-1501-44e2-8d0b-be0d9b6cb84c">
-    <con:settings>
-      <con:setting id="soapUIObjectSourceId">c8660cce-7780-467e-b857-51db06f35d30</con:setting>
-      <con:setting id="soapUIObjectSourceType">soapUIObjectSourceType_TestCase</con:setting>
-      <con:setting id="c3815482-1501-44e2-8d0b-be0d9b6cb84cfileName">Load-Test-1</con:setting>
-      <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.LoadUITestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  <con:entry key="Test Duration Limit" value=""/>
-  <con:entry key="" value=""/>
-  <con:entry key="Abort Requests" value=""/>
-  <con:entry key="Report Format" value="Default"/>
-  <con:entry key="Local Mode" value="false"/>
-  <con:entry key="Agents" value=""/>
-  <con:entry key="JUnit-Style Results" value="false"/>
-  <con:entry key="Arriving/Base VUs" value=""/>
-  <con:entry key="Statistics" value=""/>
-  <con:entry key="Global Properties" value=""/>
-  <con:entry key="Failure Limit" value=""/>
-  <con:entry key="Project Properties" value=""/>
-  <con:entry key="SelectedStatistics" value=""/>
-  <con:entry key="TestRunner Path" value=""/>
-  <con:entry key="Target Number Limit" value=""/>
-  <con:entry key="Environment" value="Default environment"/>
-  <con:entry key="ExportStatistics" value=""/>
-  <con:entry key="Root Folder" value="C:\Users\nathan.wright\Desktop"/>
-  <con:entry key="Group results" value="false"/>
-  <con:entry key="System Properties" value=""/>
-  <con:entry key="Create Reports" value="true"/>
-  <con:entry key="Save Project" value="false"/>
-  <con:entry key="LoadUITest" value="Load Test 1"/>
-</xml-fragment>]]></con:setting>
-    </con:settings>
-    <con1:loadui-project id="63bcfb9c-685f-4eb2-8fd7-e325f485e29c" label="Load Test 1" xmlns:con1="http://eviware.com/loadui/config">
-      <con1:properties>
-        <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
-        <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">false</con1:property>
-        <con1:property propagates="true" key="ModelItem.saveReport" type="java.lang.Boolean">false</con1:property>
-        <con1:property propagates="true" key="ModelItem.reportFolder" type="java.lang.String"/>
-        <con1:property propagates="true" key="ModelItem.reportFormat" type="java.lang.String"/>
-        <con1:property propagates="true" key="Temporary project" type="java.lang.String"/>
-        <con1:property propagates="true" key="ModelItem.rate" type="java.lang.Long">10</con1:property>
-        <con1:property propagates="true" key="ModelItem.loadDistributionType" type="com.smartbear.load.facade.LoadDistributionType">PerScenario</con1:property>
-        <con1:property propagates="true" key="ModelItem.remoteMode" type="java.lang.String"/>
-      </con1:properties>
-      <con1:attributes>
-        <con1:property key="limits">Time=30;</con1:property>
-      </con1:attributes>
-      <con1:addons/>
-      <con1:scene label="New Scenario" id="369129d7-8aba-41ee-9fb1-2f59d6232382">
-        <con1:properties>
-          <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
-          <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">true</con1:property>
-          <con1:property propagates="true" key="SceneItem.followProject" type="java.lang.Boolean">true</con1:property>
-          <con1:property propagates="true" key="SceneItem.scenarioRatePercentage" type="java.lang.Long">100</con1:property>
-          <con1:property propagates="true" key="SceneItem.scenarioRateSpecific" type="java.lang.Long">10</con1:property>
-          <con1:property propagates="true" key="ModelItem.samplerOutputLevel" type="com.eviware.loadui.api.component.SoapUISamplerOutputLevel">TestCaseAndAllTestSteps</con1:property>
-        </con1:properties>
-        <con1:attributes>
-          <con1:property key="limits">Time=30;</con1:property>
-        </con1:attributes>
-        <con1:addons/>
-        <con1:component type="com.eviware.loadui.impl.component.IntervalComponent" label="Interval 1" id="d8263c97-d36b-410a-bbfb-0401c9d3ea21" category="Scheduler">
-          <con1:properties>
-            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
-            <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
-            <con1:property propagates="true" key="startAt" type="java.lang.Long">0</con1:property>
-            <con1:property propagates="true" key="duration" type="java.lang.Long">5</con1:property>
-            <con1:property propagates="true" key="unit" type="java.lang.String">Sec</con1:property>
-            <con1:property propagates="true" key="mode" type="java.lang.String">Single</con1:property>
-            <con1:property propagates="true" key="defaultMode" type="java.lang.Boolean">true</con1:property>
-          </con1:properties>
-          <con1:attributes>
-            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Interval</con1:property>
-          </con1:attributes>
-          <con1:addons/>
-        </con1:component>
-        <con1:component type="com.eviware.loadui.impl.component.generators.FixedVU" label="Fixed Load 1" id="7d22a21c-64ca-4e3c-9483-e92d5b456819" category="Generators">
-          <con1:properties>
-            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
-            <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">false</con1:property>
-            <con1:property propagates="true" key="limitVU" type="java.lang.Long">250</con1:property>
-            <con1:property propagates="true" key="load" type="java.lang.Long">5</con1:property>
-            <con1:property propagates="true" key="interval" type="java.lang.Long">1000</con1:property>
-          </con1:properties>
-          <con1:attributes>
-            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Fixed Load</con1:property>
-          </con1:attributes>
-          <con1:addons/>
-        </con1:component>
-        <con1:component type="com.eviware.loadui.components.soapui.SoapUISamplerComponent" label="v1 TestSuite:/add TestCase" id="2016409f-9326-4fed-b392-e50415d60953" category="Runners">
-          <con1:properties>
-            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
-            <con1:property propagates="true" key="concurrentSamples" type="java.lang.Long">1000</con1:property>
-            <con1:property propagates="true" key="property_name_is_not_relevant_for_private_property" type="java.lang.Long">9223372036854775807</con1:property>
-            <con1:property propagates="true" key="maxQueueSize" type="java.lang.Long">1000</con1:property>
-            <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
-            <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
-            <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
-            <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">c8660cce-7780-467e-b857-51db06f35d30</con1:property>
-            <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
-            <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
-            <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
-            <con1:property propagates="true" key="closeConnectionsAfterRequest" type="java.lang.Boolean">false</con1:property>
-            <con1:property propagates="true" key="disableSoapuiAssertions" type="java.lang.Boolean">false</con1:property>
-            <con1:property propagates="true" key="forceShareDatasources" type="java.lang.Boolean">true</con1:property>
-          </con1:properties>
-          <con1:attributes>
-            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ready API TestCase Runner</con1:property>
-          </con1:attributes>
-          <con1:addons/>
-        </con1:component>
-        <con1:component type="com.eviware.loadui.components.soapui.SoapUISamplerComponent" label="v1 TestSuite:/subtract TestCase" id="f612e3e5-e1c6-484c-aa90-97897d2190dc" category="Runners">
-          <con1:properties>
-            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
-            <con1:property propagates="true" key="concurrentSamples" type="java.lang.Long">1000</con1:property>
-            <con1:property propagates="true" key="property_name_is_not_relevant_for_private_property" type="java.lang.Long">9223372036854775807</con1:property>
-            <con1:property propagates="true" key="maxQueueSize" type="java.lang.Long">1000</con1:property>
-            <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
-            <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
-            <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
-            <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">5e635c33-74b2-4226-8a77-75886d453cbf</con1:property>
-            <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
-            <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
-            <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
-            <con1:property propagates="true" key="closeConnectionsAfterRequest" type="java.lang.Boolean">false</con1:property>
-            <con1:property propagates="true" key="disableSoapuiAssertions" type="java.lang.Boolean">false</con1:property>
-            <con1:property propagates="true" key="forceShareDatasources" type="java.lang.Boolean">true</con1:property>
-          </con1:properties>
-          <con1:attributes>
-            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ready API TestCase Runner</con1:property>
-          </con1:attributes>
-          <con1:addons/>
-        </con1:component>
-        <con1:connection outputTerminalId="d8263c97-d36b-410a-bbfb-0401c9d3ea21/outgoingTerminal" inputTerminalId="7d22a21c-64ca-4e3c-9483-e92d5b456819/stateTerminal"/>
-        <con1:connection outputTerminalId="7d22a21c-64ca-4e3c-9483-e92d5b456819/triggerTerminal" inputTerminalId="2016409f-9326-4fed-b392-e50415d60953/triggerTerminal"/>
-        <con1:connection outputTerminalId="2016409f-9326-4fed-b392-e50415d60953/runningTerminal" inputTerminalId="f612e3e5-e1c6-484c-aa90-97897d2190dc/triggerTerminal"/>
-        <con1:connection outputTerminalId="f612e3e5-e1c6-484c-aa90-97897d2190dc/runningTerminal" inputTerminalId="7d22a21c-64ca-4e3c-9483-e92d5b456819/Sample Count"/>
-      </con1:scene>
-      <con1:statistics>
-        <con1:page title="DefaultLoadUIStatisticPage">
-          <con1:chartGroup type="com.eviware.loadui.api.statistics.model.chart.line.LineChartView" title="" groupType="Monitors">
-            <con1:attributes>
-              <con1:property key="GroupId">5e669966-25d3-4928-89b9-f974a219e83e</con1:property>
-            </con1:attributes>
-          </con1:chartGroup>
-        </con1:page>
-      </con1:statistics>
-    </con1:loadui-project>
-    <con:loadUITestScenario projectId="63bcfb9c-685f-4eb2-8fd7-e325f485e29c" scenarioId="369129d7-8aba-41ee-9fb1-2f59d6232382" name="New Scenario" id="7aa114ce-1ea6-46e7-9582-1c3d67ab5d15">
-      <con:settings/>
-    </con:loadUITestScenario>
-    <con:loadUIPanelData id="c14ecde4-5208-4f26-a806-38d6a2e3c0cc">
-      <con:panel>Log</con:panel>
-      <con:data>
-        <con:paramName>column_width@Timestamp</con:paramName>
-        <con:paramValue>84</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_visible@Timestamp</con:paramName>
-        <con:paramValue>true</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_width@ID</con:paramName>
-        <con:paramValue>74</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_visible@ID</con:paramName>
-        <con:paramValue>true</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_width@Test step status</con:paramName>
-        <con:paramValue>120</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_visible@Test step status</con:paramName>
-        <con:paramValue>true</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_width@TriggerTimestamp</con:paramName>
-        <con:paramValue>84</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_visible@TriggerTimestamp</con:paramName>
-        <con:paramValue>true</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_width@TimeTaken</con:paramName>
-        <con:paramValue>115</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_visible@TimeTaken</con:paramName>
-        <con:paramValue>true</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_width@_wait_time_</con:paramName>
-        <con:paramValue>106</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_visible@_wait_time_</con:paramName>
-        <con:paramValue>true</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_width@Bytes</con:paramName>
-        <con:paramValue>52</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_visible@Bytes</con:paramName>
-        <con:paramValue>true</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_width@HTTP Status</con:paramName>
-        <con:paramValue>90</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_visible@HTTP Status</con:paramName>
-        <con:paramValue>true</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_width@CurrentlyRunning</con:paramName>
-        <con:paramValue>75</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_visible@CurrentlyRunning</con:paramName>
-        <con:paramValue>true</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_width@Request</con:paramName>
-        <con:paramValue>67</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_visible@Request</con:paramName>
-        <con:paramValue>false</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_width@Response</con:paramName>
-        <con:paramValue>77</con:paramValue>
-      </con:data>
-      <con:data>
-        <con:paramName>column_visible@Response</con:paramName>
-        <con:paramValue>false</con:paramValue>
-      </con:data>
-    </con:loadUIPanelData>
-    <con:reportParameters/>
-  </con:loadUiTest>
 </con:soapui-project>

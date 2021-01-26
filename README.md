@@ -1,6 +1,8 @@
 # smart-calculator-backend
 
 ## Front End Application [Here](https://github.com/nate01776/smart-calculator)
+## [SwaggerHub Link](https://app.swaggerhub.com/apis/Nathan-Demo/smartbear-calculator/2.0.0)
+* There is a v1.0.0 (add, subtract) and v2.0.0 (include additional functions multiply and divide)
 
 ### Setup
 * Clone repository

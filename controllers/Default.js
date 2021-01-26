@@ -10,6 +10,21 @@ module.exports.addInput = function addInput (req, res, next) {
   Default.addInput(inputOne,inputTwo)
     .then(function (response) {
       response.result = inputOne + inputTwo;
+      
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
+module.exports.divideInput = function divideInput (req, res, next) {
+  var inputOne = req.swagger.params['inputOne'].value;
+  var inputTwo = req.swagger.params['inputTwo'].value;
+
+  Default.divideInput(inputOne,inputTwo)
+    .then(function (response) {
+      response.result = inputOne / inputTwo;
 
       utils.writeJson(res, response);
     })
@@ -18,41 +33,26 @@ module.exports.addInput = function addInput (req, res, next) {
     });
 };
 
-// module.exports.divideInput = function divideInput (req, res, next) {
-//   var inputOne = req.swagger.params['inputOne'].value;
-//   var inputTwo = req.swagger.params['inputTwo'].value;
+module.exports.multiplyInput = function multiplyInput (req, res, next) {
+  var inputOne = req.swagger.params['inputOne'].value;
+  var inputTwo = req.swagger.params['inputTwo'].value;
 
-//   Default.subtractInput(inputOne,inputTwo)
-//     .then(function (response) {
-//       response.result = inputOne / inputTwo;
+  Default.multiplyInput(inputOne,inputTwo)
+    .then(function (response) {
+      response.result = inputOne * inputTwo;
 
-//       utils.writeJson(res, response);
-//     })
-//     .catch(function (response) {
-//       utils.writeJson(res, response);
-//     });
-// };
-
-// module.exports.multiplyInput = function multiplyInput (req, res, next) {
-//   var inputOne = req.swagger.params['inputOne'].value;
-//   var inputTwo = req.swagger.params['inputTwo'].value;
-
-//   Default.multiplyInput(inputOne,inputTwo)
-//     .then(function (response) {
-//       response.result = inputOne * inputTwo;
-
-//       utils.writeJson(res, response);
-//     })
-//     .catch(function (response) {
-//       utils.writeJson(res, response);
-//     });
-// };
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
 
 module.exports.subtractInput = function subtractInput (req, res, next) {
   var inputOne = req.swagger.params['inputOne'].value;
   var inputTwo = req.swagger.params['inputTwo'].value;
 
-  Default.divideInput(inputOne,inputTwo)
+  Default.subtractInput(inputOne,inputTwo)
     .then(function (response) {
       response.result = inputOne - inputTwo;
 

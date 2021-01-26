@@ -14,7 +14,7 @@
   "private": true,
   "dependencies": {
     "connect": "^3.7.0",
-    "js-yaml": "^4.0.0",
+    "js-yaml": "3.13.1",
     "lodash": "^4.17.20",
     "superagent": "^6.1.0",
     "swagger-tools": "0.10.1"

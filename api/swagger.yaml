@@ -67,60 +67,60 @@ paths:
           schema:
             $ref: "#/definitions/standardError_2"
       x-swagger-router-controller: "Default"
-  # /multiply:
-  #   post:
-  #     summary: "Multiply inputOne and inputTwo"
-  #     operationId: "multiplyInput"
-  #     produces:
-  #     - "application/json"
-  #     parameters:
-  #     - name: "inputOne"
-  #       in: "query"
-  #       description: "First input to resolve"
-  #       required: true
-  #       type: "string"
-  #     - name: "inputTwo"
-  #       in: "query"
-  #       description: "First input to resolve"
-  #       required: true
-  #       type: "string"
-  #     responses:
-  #       200:
-  #         description: "Successful operation."
-  #         schema:
-  #           $ref: "#/definitions/standardResponse_2"
-  #       404:
-  #         description: "Bad input."
-  #         schema:
-  #           $ref: "#/definitions/standardError_2"
-  #     x-swagger-router-controller: "Default"
-  # /divide:
-  #   post:
-  #     summary: "Divdie inputOne into inputTwo"
-  #     operationId: "divideInput"
-  #     produces:
-  #     - "application/json"
-  #     parameters:
-  #     - name: "inputOne"
-  #       in: "query"
-  #       description: "First input to resolve"
-  #       required: true
-  #       type: "string"
-  #     - name: "inputTwo"
-  #       in: "query"
-  #       description: "First input to resolve"
-  #       required: true
-  #       type: "string"
-  #     responses:
-  #       200:
-  #         description: "Successful operation."
-  #         schema:
-  #           $ref: "#/definitions/standardResponse_2"
-  #       404:
-  #         description: "Bad input."
-  #         schema:
-  #           $ref: "#/definitions/standardError_2"
-  #     x-swagger-router-controller: "Default"
+  /multiply:
+    post:
+      summary: "Multiply inputOne and inputTwo"
+      operationId: "multiplyInput"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "inputOne"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      - name: "inputTwo"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful operation."
+          schema:
+            $ref: "#/definitions/standardResponse_2"
+        404:
+          description: "Bad input."
+          schema:
+            $ref: "#/definitions/standardError_2"
+      x-swagger-router-controller: "Default"
+  /divide:
+    post:
+      summary: "Divdie inputOne into inputTwo"
+      operationId: "divideInput"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "inputOne"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      - name: "inputTwo"
+        in: "query"
+        description: "First input to resolve"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful operation."
+          schema:
+            $ref: "#/definitions/standardResponse_2"
+        404:
+          description: "Bad input."
+          schema:
+            $ref: "#/definitions/standardError_2"
+      x-swagger-router-controller: "Default"
 definitions:
   standardResponse:
     type: "object"
